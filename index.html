@@ -3,7 +3,64 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Selvatica Direct Booking Suite</title>
+
+<!-- SEO: Título -->
+<title>Casa del Bosque Tayrona | Eco-Lodge & Cabañas con Vista al Mar Caribe</title>
+<meta name="description" content="Despierta sobre la selva con la Sierra Nevada detrás y el Mar Caribe adelante. Reserva directa sin comisiones. Cabañas privadas desde COP $300.000/noche en el Parque Tayrona, Colombia." />
+<meta name="keywords" content="cabaña tayrona, eco lodge tayrona, reserva tayrona, hotel tayrona, casa del bosque tayrona, alojamiento tayrona, parque tayrona cabaña, tayrona colombia, sierra nevada cabaña, caribe colombia" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.casadelbosquetayrona.com/" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<!-- Open Graph (WhatsApp, Facebook, Instagram) -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.casadelbosquetayrona.com/" />
+<meta property="og:title" content="Casa del Bosque Tayrona | Eco-Lodge con Vista al Mar Caribe" />
+<meta property="og:description" content="Cabañas privadas en la selva del Tayrona. Vista al Mar Caribe y la Sierra Nevada. Reserva directa desde COP $300.000/noche. Sin comisiones." />
+<meta property="og:image" content="https://www.casadelbosquetayrona.com/images/hero.webp" />
+<meta property="og:locale" content="es_CO" />
+<meta property="og:locale:alternate" content="en_US" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Casa del Bosque Tayrona | Eco-Lodge con Vista al Mar Caribe" />
+<meta name="twitter:description" content="Cabañas privadas en la selva del Tayrona. Reserva directa desde COP $300.000/noche." />
+<meta name="twitter:image" content="https://www.casadelbosquetayrona.com/images/hero.webp" />
+
+<!-- Schema markup para Google -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Casa del Bosque Tayrona",
+  "description": "Eco-lodge boutique con cabañas privadas en el Parque Tayrona. Vista al Mar Caribe y la Sierra Nevada de Santa Marta.",
+  "url": "https://www.casadelbosquetayrona.com",
+  "telephone": "+573213221502",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Santa Marta",
+    "addressRegion": "Magdalena",
+    "addressCountry": "CO"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "11.1069",
+    "longitude": "-74.2106"
+  },
+  "priceRange": "COP $300.000/noche",
+  "checkinTime": "14:00",
+  "checkoutTime": "11:00",
+  "amenityFeature": [
+    {"@type": "LocationFeatureSpecification", "name": "Vista al mar", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Desayuno incluido", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Baño privado", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Selva tropical", "value": true}
+  ]
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -68,18 +125,18 @@ input:focus,select:focus{border-color:var(--green3);background:white}
       <div class="field"><label>Guests</label><select id="guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option><option>5+ guests</option></select></div>
       <button class="primary" onclick="filterRooms()">Check availability</button>
     </div>
-    <div class="small">Availability is based on blocked dates configured in editable-config.js.</div>
+    <div class="small">Availability is updated in real time. Book directly and save on fees.</div>
   </section>
 
   <div class="section-title">
     <div><h2>Available stays</h2><p id="dateText">Select dates to see available units.</p></div>
-    <p>Each cabin was designed to reconnect you with nature, silence and slow living.</p>
+    <p>Guests see real units — not generic categories. Each room, cabin or villa can have its own photo, description, price and blocked dates.</p>
   </div>
 
   <div class="rooms" id="rooms"></div>
   <div class="empty" id="empty"><h2>No availability for those dates</h2><p>Try different dates or contact the property directly on WhatsApp.</p><br><button class="whatsapp" onclick="generalWhatsApp()">Contact via WhatsApp</button></div>
 
-  <div class="notice"><strong>The Experience:</strong> Wake up surrounded by rainforest, mountain mist and Caribbean light. Hidden high above the Caribbean coast, each cabin was designed to reconnect you with nature, silence and slow living — an immersive escape between the Sierra Nevada mountains and the sea.</div>
+  <div class="notice"><strong>Why this works:</strong> Instead of a generic WhatsApp button, guests arrive with dates, guests and selected unit already written. That makes the conversation warmer, faster and easier to close.</div>
 
   <div class="footer">Powered by Selvatica Direct Booking Suite</div>
 </div>
@@ -121,7 +178,7 @@ function renderRooms(list){
  empty.classList.toggle('show',list.length===0);
  list.forEach(u=>{
   const card=document.createElement('div'); card.className='room';
-  card.innerHTML=`<div class="room-img" style="background-image:url('${u.image}')"><div class="room-status">Available</div></div><div class="room-body"><h3>${escapeHtml(u.name)}</h3><p class="desc">${escapeHtml(u.description)}</p><div class="meta">${(u.amenities||[]).map(a=>`<span class="pill">${escapeHtml(a)}</span>`).join('')}</div><div class="price">${config.currency}${u.price} <span>/ night</span></div><div class="actions"><button class="secondary" onclick="viewDetails('${u.id}')">View details</button><button class="whatsapp" onclick="bookWhatsApp('${u.id}')">Book via WhatsApp</button></div></div>`;
+  card.innerHTML=`<div class="room-img" style="background-image:url('${u.image}')"><div class="room-status">Available</div></div><div class="room-body"><h3>${escapeHtml(u.name)}</h3><p class="desc">${escapeHtml(u.description)}</p><div class="meta">${(u.amenities||[]).map(a=>`<span class="pill">${escapeHtml(a)}</span>`).join('')}</div><div class="price">${config.currency}${u.price.toLocaleString()} <span>/ night</span></div><div class="actions"><button class="secondary" onclick="viewDetails('${u.id}')">View details</button><button class="whatsapp" onclick="bookWhatsApp('${u.id}')">Book via WhatsApp</button></div></div>`;
   root.appendChild(card);
  });
 }
