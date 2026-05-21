@@ -1,0 +1,1 @@
+Place room/cabin/villa images here if you want to use local image files.

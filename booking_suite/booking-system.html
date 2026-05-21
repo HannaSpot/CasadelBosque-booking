@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Selvatica Direct Booking Suite</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#123524; --green2:#1f5137; --green3:#2f6b49; --sage:#eef4ec; --cream:#fbfaf5;
+  --gold:#b99a55; --border:#dfe5d8; --muted:#687264; --text:#172017; --white:#fff;
+  --shadow:0 18px 60px rgba(18,53,36,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);padding:28px 14px}
+button,input,select{font-family:'DM Sans',sans-serif}
+button{border:0;border-radius:14px;padding:14px 20px;font-weight:800;cursor:pointer;transition:.18s ease}
+button:hover{transform:translateY(-1px)}
+.wrap{max-width:1120px;margin:auto}
+.hero{border-radius:30px;overflow:hidden;background:linear-gradient(135deg,rgba(18,53,36,.88),rgba(18,53,36,.55)),var(--hero);background-size:cover;background-position:center;padding:56px 36px;color:white;box-shadow:var(--shadow)}
+.badge{display:inline-block;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.13);padding:8px 18px;border-radius:999px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600}
+h1{font-size:clamp(42px,6vw,68px);line-height:.95;max-width:760px;margin-bottom:16px}
+.hero p{font-size:18px;line-height:1.6;max-width:680px;color:rgba(255,255,255,.88)}
+.search-card{background:white;margin:-32px auto 26px;max-width:980px;border:1px solid var(--border);border-radius:24px;padding:18px;box-shadow:var(--shadow);position:relative}
+.search-grid{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:12px;align-items:end}
+.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:7px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+input,select{width:100%;border:1px solid var(--border);background:var(--cream);border-radius:14px;padding:13px 14px;font-size:15px;color:var(--text);outline:none}
+input:focus,select:focus{border-color:var(--green3);background:white}
+.primary{background:var(--green);color:white;white-space:nowrap}.primary:hover{background:var(--green2)}
+.small{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.45}
+.section-title{display:flex;justify-content:space-between;align-items:end;margin:30px 0 15px;gap:18px}
+.section-title h2{font-size:42px}.section-title p{color:var(--muted);font-size:14px;max-width:560px;line-height:1.55}
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.room{background:white;border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:0 8px 28px rgba(18,53,36,.07);display:flex;flex-direction:column}
+.room-img{height:190px;background-size:cover;background-position:center;position:relative}
+.room-status{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.94);color:var(--green);font-size:12px;font-weight:800;padding:7px 11px;border-radius:999px}
+.room-body{padding:18px;flex:1;display:flex;flex-direction:column}
+.room h3{font-size:29px;margin-bottom:6px}
+.desc{color:var(--muted);font-size:14px;line-height:1.55;margin-bottom:12px}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.pill{background:var(--sage);color:var(--green2);font-size:12px;padding:6px 10px;border-radius:999px;font-weight:700}
+.price{font-size:22px;color:var(--green);font-weight:900;margin-top:auto;margin-bottom:14px}.price span{font-size:13px;color:var(--muted);font-weight:500}
+.actions{display:grid;grid-template-columns:1fr 1.2fr;gap:8px}.secondary{background:white;color:var(--green);border:1px solid var(--border)}.whatsapp{background:#1f7a4b;color:white}.whatsapp:hover{background:#16653d}
+.notice{margin-top:18px;background:#fff8e8;border:1px solid #efd99b;border-radius:18px;padding:15px 17px;color:#6c561b;font-size:14px;line-height:1.55}
+.empty{display:none;background:white;border:1px solid var(--border);border-radius:22px;padding:34px;text-align:center;color:var(--muted)}.empty.show{display:block}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.48);display:none;align-items:center;justify-content:center;padding:20px;z-index:20}.modal.show{display:flex}
+.modal-card{background:white;border-radius:24px;max-width:650px;width:100%;overflow:hidden;box-shadow:var(--shadow)}
+.modal-img{height:260px;background-size:cover;background-position:center}.modal-content{padding:22px}.modal-content h3{font-size:36px}.close{float:right;background:var(--sage);color:var(--green);padding:8px 12px;border-radius:999px}
+.footer{text-align:center;margin:24px 0 0;color:var(--muted);font-size:12px}
+@media(max-width:900px){.search-grid{grid-template-columns:1fr 1fr}.search-grid .primary{grid-column:1/-1}.rooms{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){body{padding:12px}.hero{padding:38px 22px;border-radius:22px}h1{font-size:40px}.search-card{margin-top:-20px}.search-grid,.rooms{grid-template-columns:1fr}.section-title{display:block}.actions{grid-template-columns:1fr}.room-img{height:220px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero" id="hero">
+    <div class="badge" id="propertyBadge"></div>
+    <h1 id="heroTitle"></h1>
+    <p id="heroSubtitle"></p>
+  </section>
+
+  <section class="search-card">
+    <div class="search-grid">
+      <div class="field"><label>Check-in</label><input type="date" id="checkin"></div>
+      <div class="field"><label>Check-out</label><input type="date" id="checkout"></div>
+      <div class="field"><label>Guests</label><select id="guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option><option>5+ guests</option></select></div>
+      <button class="primary" onclick="filterRooms()">Check availability</button>
+    </div>
+    <div class="small">Availability is based on blocked dates configured in editable-config.js.</div>
+  </section>
+
+  <div class="section-title">
+    <div><h2>Available stays</h2><p id="dateText">Select dates to see available units.</p></div>
+    <p>Each cabin was designed to reconnect you with nature, silence and slow living.</p>
+  </div>
+
+  <div class="rooms" id="rooms"></div>
+  <div class="empty" id="empty"><h2>No availability for those dates</h2><p>Try different dates or contact the property directly on WhatsApp.</p><br><button class="whatsapp" onclick="generalWhatsApp()">Contact via WhatsApp</button></div>
+
+  <div class="notice"><strong>The Experience:</strong> Wake up surrounded by rainforest, mountain mist and Caribbean light. Hidden high above the Caribbean coast, each cabin was designed to reconnect you with nature, silence and slow living — an immersive escape between the Sierra Nevada mountains and the sea.</div>
+
+  <div class="footer">Powered by Selvatica Direct Booking Suite</div>
+</div>
+
+<div class="modal" id="modal" onclick="if(event.target.id==='modal')closeModal()">
+  <div class="modal-card">
+    <div class="modal-img" id="modalImg"></div>
+    <div class="modal-content"><button class="close" onclick="closeModal()">Close</button><h3 id="modalTitle"></h3><p class="desc" id="modalDesc"></p><div class="meta" id="modalMeta"></div><button class="whatsapp" id="modalBtn">Book via WhatsApp</button></div>
+  </div>
+</div>
+
+<script src="editable-config.js"></script>
+<script>
+let config = hotelConfig;
+function todayPlus(days){const d=new Date();d.setDate(d.getDate()+days);return d.toISOString().split('T')[0];}
+document.getElementById('checkin').value=todayPlus(1);
+document.getElementById('checkout').value=todayPlus(3);
+
+function applyBrand(){
+  document.getElementById('propertyBadge').textContent = config.badge;
+  document.getElementById('heroTitle').textContent = config.heroTitle;
+  document.getElementById('heroSubtitle').textContent = config.heroSubtitle;
+  document.getElementById('hero').style.setProperty('--hero', `url('${config.heroImage}')`);
+}
+function dateRange(start,end){const dates=[];let d=new Date(start+'T00:00:00');const e=new Date(end+'T00:00:00');while(d<e){dates.push(d.toISOString().split('T')[0]);d.setDate(d.getDate()+1);}return dates;}
+function isAvailable(room,ci,co){const requested=dateRange(ci,co);return !requested.some(d=>(room.blockedDates||[]).includes(d));}
+function nights(ci,co){return Math.max(0,Math.round((new Date(co)-new Date(ci))/(1000*60*60*24)));}
+function fmt(d){const [y,m,day]=d.split('-');return `${m}/${day}/${y}`;}
+function escapeHtml(str){return String(str||'').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+
+function filterRooms(){
+ const ci=document.getElementById('checkin').value, co=document.getElementById('checkout').value;
+ if(!ci||!co||new Date(co)<=new Date(ci)){alert('Please select valid check-in and check-out dates.');return;}
+ document.getElementById('dateText').textContent=`Available for ${fmt(ci)} to ${fmt(co)} · ${nights(ci,co)} nights`;
+ renderRooms(config.rooms.filter(u=>isAvailable(u,ci,co)));
+}
+function renderRooms(list){
+ const root=document.getElementById('rooms'), empty=document.getElementById('empty'); root.innerHTML='';
+ empty.classList.toggle('show',list.length===0);
+ list.forEach(u=>{
+  const card=document.createElement('div'); card.className='room';
+  card.innerHTML=`<div class="room-img" style="background-image:url('${u.image}')"><div class="room-status">Available</div></div><div class="room-body"><h3>${escapeHtml(u.name)}</h3><p class="desc">${escapeHtml(u.description)}</p><div class="meta">${(u.amenities||[]).map(a=>`<span class="pill">${escapeHtml(a)}</span>`).join('')}</div><div class="price">${config.currency}${u.price} <span>/ night</span></div><div class="actions"><button class="secondary" onclick="viewDetails('${u.id}')">View details</button><button class="whatsapp" onclick="bookWhatsApp('${u.id}')">Book via WhatsApp</button></div></div>`;
+  root.appendChild(card);
+ });
+}
+function makeMessage(u){
+ const ci=document.getElementById('checkin').value, co=document.getElementById('checkout').value, g=document.getElementById('guests').value;
+ return `Hi! I would like to book the ${u.name} at ${config.propertyName} from ${fmt(ci)} to ${fmt(co)} for ${g}. Is it available?`;
+}
+function bookWhatsApp(id){const u=config.rooms.find(x=>x.id===id);window.open(`https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(makeMessage(u))}`,'_blank');}
+function generalWhatsApp(){window.open(`https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent('Hi! I would like to check availability for my dates.')}`,'_blank');}
+function viewDetails(id){const u=config.rooms.find(x=>x.id===id);document.getElementById('modalImg').style.backgroundImage=`url('${u.image}')`;document.getElementById('modalTitle').textContent=u.name;document.getElementById('modalDesc').textContent=u.description;document.getElementById('modalMeta').innerHTML=(u.amenities||[]).map(a=>`<span class="pill">${escapeHtml(a)}</span>`).join('');document.getElementById('modalBtn').onclick=()=>bookWhatsApp(id);document.getElementById('modal').classList.add('show');}
+function closeModal(){document.getElementById('modal').classList.remove('show');}
+
+applyBrand(); renderRooms(config.rooms);
+</script>
+</body>
+</html>
