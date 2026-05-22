@@ -285,18 +285,55 @@ input:focus,select:focus{border-color:var(--green3);background:white}
 }
 @media(max-width:620px){
   body{padding:12px}
-  .hero{padding:48px 22px 70px;border-radius:22px;min-height:75vh;}
-  .hero-top{left:22px;top:22px;}
-  h1{font-size:42px}
-  .hero-actions{flex-direction:column;}
-  .btn-hero-primary,.btn-hero-outline{text-align:center;}
-  .search-card{margin-top:-24px}
+
+  /* Hero mobile */
+  .hero{
+    padding:20px 20px 52px;
+    border-radius:22px;
+    min-height:78vh;
+    justify-content:flex-end;
+  }
+  /* Move badges into the flow — not absolute on mobile */
+  .hero-top{
+    position:static;
+    display:flex;flex-direction:row;
+    flex-wrap:wrap;
+    align-items:center;gap:8px;
+    margin-bottom:16px;
+  }
+  .badge{font-size:10px;padding:6px 12px;letter-spacing:1.5px;}
+  .hero-scarcity{
+    margin-left:0;font-size:11px;padding:6px 12px;
+  }
+  h1{font-size:clamp(34px,9vw,42px);margin-bottom:14px;line-height:.95;}
+  .hero-sub{font-size:15px;margin-bottom:22px;line-height:1.55;}
+
+  /* Buttons: primary full width, secondary as text link */
+  .hero-actions{flex-direction:column;gap:10px;}
+  .btn-hero-primary{
+    text-align:center;width:100%;
+    padding:16px 20px;font-size:15px;
+  }
+  .btn-hero-outline{
+    text-align:center;width:100%;
+    padding:12px 20px;font-size:14px;
+    background:transparent;
+    border:1px solid rgba(255,255,255,.3);
+  }
+
+  /* Rest */
+  .search-card{margin-top:-20px}
   .search-grid,.rooms{grid-template-columns:1fr}
   .section-title{display:block}
   .actions{grid-template-columns:1fr}
   .room-img{height:240px}
   .story-section{margin:40px -12px 0}
+  .story-content{padding:36px 24px}
+  .story-pull{left:20px;right:20px;bottom:20px;padding:18px 20px;}
+  .story-pull blockquote{font-size:18px;}
   .trust-pills{gap:8px}
+  .experience-section{padding:60px 18px}
+  .direct-section{padding:60px 18px}
 }
 </style>
 </head>
@@ -378,17 +415,17 @@ input:focus,select:focus{border-color:var(--green3);background:white}
     </div>
     <div class="experience-grid">
       <div class="experience-card">
-        <img src="images/Sunrise.webp" alt="Jungle sunrise">
+        <img src="images/Sunrise.webp" alt="Jungle sunrise" loading="lazy">
         <h3 data-i18n="exp1Title">Sunrise & Jungle Views</h3>
         <p data-i18n="exp1Text">Wake up above the canopy with panoramic views of the Sierra Nevada mountains and the Caribbean horizon.</p>
       </div>
       <div class="experience-card">
-        <img src="images/Hamock.webp" alt="Slow living">
+        <img src="images/Hamock.webp" alt="Slow living" loading="lazy">
         <h3 data-i18n="exp2Title">Slow Living</h3>
         <p data-i18n="exp2Text">Disconnect from noise and reconnect with nature through slower mornings, forest sounds and open-air spaces.</p>
       </div>
       <div class="experience-card">
-        <img src="images/terrace.webp" alt="Open air comfort">
+        <img src="images/terrace.webp" alt="Open air comfort" loading="lazy">
         <h3 data-i18n="exp3Title">Open-Air Comfort</h3>
         <p data-i18n="exp3Text">Private terraces, jungle showers and immersive architecture designed to blend into the surrounding landscape.</p>
       </div>
@@ -439,7 +476,7 @@ input:focus,select:focus{border-color:var(--green3);background:white}
 <section class="story-section">
   <div class="story-inner">
     <div class="story-image">
-      <img src="images/Sierra.webp" alt="Sierra Nevada jungle">
+      <img src="images/Sierra.webp" alt="Sierra Nevada jungle" loading="lazy">
       <div class="story-pull">
         <blockquote data-i18n="storyQuote">"A place where the jungle teaches you to breathe again."</blockquote>
         <cite data-i18n="storyQuoteCite">— A guest's journal, 2025</cite>
