@@ -20,7 +20,35 @@ button:hover{transform:translateY(-1px)}
 .wrap{
   max-width:1120px;
   margin:auto;
-}.hero{border-radius:30px;overflow:hidden;background:linear-gradient(135deg,rgba(18,53,36,.88),rgba(18,53,36,.55)),var(--hero);background-size:cover;background-position:center;padding:56px 36px;color:white;box-shadow:var(--shadow)}
+}
+
+/* ═══════ LANGUAGE SWITCHER ═══════ */
+.lang-switch{
+  position:fixed; top:18px; right:18px; z-index:50;
+  display:flex; gap:2px;
+  background:rgba(255,255,255,.95);
+  padding:4px; border-radius:999px;
+  box-shadow:0 4px 16px rgba(18,53,36,.15);
+  backdrop-filter:blur(8px);
+  border:1px solid var(--border);
+}
+.lang-btn{
+  border:0; background:transparent; cursor:pointer;
+  padding:8px 14px; border-radius:999px;
+  font-family:'DM Sans',sans-serif; font-size:12px;
+  letter-spacing:.1em; font-weight:700;
+  color:var(--muted); transition:.2s ease;
+}
+.lang-btn:hover{transform:none; color:var(--green)}
+.lang-btn.active{
+  background:var(--green); color:white;
+}
+@media(max-width:620px){
+  .lang-switch{top:12px; right:12px}
+  .lang-btn{padding:7px 12px; font-size:11px}
+}
+
+.hero{border-radius:30px;overflow:hidden;background:linear-gradient(135deg,rgba(18,53,36,.88),rgba(18,53,36,.55)),var(--hero);background-size:cover;background-position:center;padding:56px 36px;color:white;box-shadow:var(--shadow)}
 .badge{display:inline-block;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.13);padding:8px 18px;border-radius:999px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px}
 h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600}
 h1{font-size:clamp(42px,6vw,68px);line-height:.95;max-width:760px;margin-bottom:16px}
@@ -200,7 +228,7 @@ input:focus,select:focus{border-color:var(--green3);background:white}
 }
 
 .direct-card{
-  background#f7f5ef;
+  background:#f7f5ef;
   border-radius:24px;
   padding:36px;
   transition:0.35s ease;
@@ -286,6 +314,13 @@ input:focus,select:focus{border-color:var(--green3);background:white}
 </style>
 </head>
 <body>
+
+<!-- ═══════ LANGUAGE SWITCHER ═══════ -->
+<div class="lang-switch" role="group" aria-label="Language">
+  <button class="lang-btn" data-lang="en">EN</button>
+  <button class="lang-btn" data-lang="es">ES</button>
+</div>
+
 <div class="wrap">
   <section class="hero" id="hero">
     <div class="badge" id="propertyBadge"></div>
@@ -295,32 +330,48 @@ input:focus,select:focus{border-color:var(--green3);background:white}
 
   <section class="search-card">
     <div class="search-grid">
-      <div class="field"><label>Check-in</label><input type="date" id="checkin"></div>
-      <div class="field"><label>Check-out</label><input type="date" id="checkout"></div>
-      <div class="field"><label>Guests</label><select id="guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option><option>5+ guests</option></select></div>
-      <button class="primary" onclick="filterRooms()">Check availability</button>
+      <div class="field"><label data-i18n="labelCheckin">Check-in</label><input type="date" id="checkin"></div>
+      <div class="field"><label data-i18n="labelCheckout">Check-out</label><input type="date" id="checkout"></div>
+      <div class="field"><label data-i18n="labelGuests">Guests</label>
+        <select id="guests">
+          <option value="1"></option>
+          <option value="2" selected></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+        </select>
+      </div>
+      <button class="primary" data-i18n="btnCheckAvailability" onclick="filterRooms()">Check availability</button>
     </div>
-    <div class="small">Availability is based on blocked dates configured in editable-config.js.</div>
+    <div class="small" data-i18n="formNote">Availability is based on blocked dates configured in editable-config.js.</div>
   </section>
 
   <div class="section-title">
-    <div><h2>Available stays</h2><p id="dateText">Select dates to see available units.</p></div>
-    <p>Each cabin was designed to reconnect you with nature, silence and slow living.</p>
+    <div>
+      <h2 data-i18n="availableStaysTitle">Available stays</h2>
+      <p id="dateText" data-i18n="selectDatesText">Select dates to see available units.</p>
+    </div>
+    <p data-i18n="cabinTagline">Each cabin was designed to reconnect you with nature, silence and slow living.</p>
   </div>
 
   <div class="rooms" id="rooms"></div>
-  <div class="empty" id="empty"><h2>No availability for those dates</h2><p>Try different dates or contact the property directly on WhatsApp.</p><br><button class="whatsapp" onclick="generalWhatsApp()">Contact via WhatsApp</button></div>
+  <div class="empty" id="empty">
+    <h2 data-i18n="emptyTitle">No availability for those dates</h2>
+    <p data-i18n="emptyText">Try different dates or contact the property directly on WhatsApp.</p>
+    <br>
+    <button class="whatsapp" data-i18n="btnContactWA" onclick="generalWhatsApp()">Contact via WhatsApp</button>
+  </div>
 
 
 
 <section class="experience-section">
 
   <div class="experience-header">
-    <p class="experience-label">THE EXPERIENCE</p>
+    <p class="experience-label" data-i18n="experienceLabel">THE EXPERIENCE</p>
 
-    <h2>Slow mornings above the jungle canopy</h2>
+    <h2 data-i18n="experienceTitle">Slow mornings above the jungle canopy</h2>
 
-    <p class="experience-intro">
+    <p class="experience-intro" data-i18n="experienceIntro">
       Wake up with birdsong, open-air mountain breezes and panoramic jungle views.
       Casa del Bosque was designed for travelers seeking silence, nature and a
       deeper connection with the Sierra Nevada landscape.
@@ -331,9 +382,9 @@ input:focus,select:focus{border-color:var(--green3);background:white}
   <div class="experience-card">
     <img src="images/Sunrise.webp" alt="Jungle sunrise">
 
-    <h3>Sunrise & Jungle Views</h3>
+    <h3 data-i18n="exp1Title">Sunrise & Jungle Views</h3>
 
-    <p>
+    <p data-i18n="exp1Text">
       Wake up above the canopy with panoramic views of the Sierra Nevada mountains
       and the Caribbean horizon.
     </p>
@@ -342,9 +393,9 @@ input:focus,select:focus{border-color:var(--green3);background:white}
   <div class="experience-card">
     <img src="images/Hamock.webp" alt="Slow living">
 
-    <h3>Slow Living</h3>
+    <h3 data-i18n="exp2Title">Slow Living</h3>
 
-    <p>
+    <p data-i18n="exp2Text">
       Disconnect from noise and reconnect with nature through slower mornings,
       forest sounds and open-air spaces.
     </p>
@@ -353,9 +404,9 @@ input:focus,select:focus{border-color:var(--green3);background:white}
   <div class="experience-card">
     <img src="images/terrace.webp" alt="Open air comfort">
 
-    <h3>Open-Air Comfort</h3>
+    <h3 data-i18n="exp3Title">Open-Air Comfort</h3>
 
-    <p>
+    <p data-i18n="exp3Text">
       Private terraces, jungle showers and immersive architecture designed to blend
       into the surrounding landscape.
     </p>
@@ -363,7 +414,7 @@ input:focus,select:focus{border-color:var(--green3);background:white}
 
 </div>
 
-<p class="experience-note">
+<p class="experience-note" data-i18n="experienceNote">
 Designed for couples, creatives, nature lovers and slow travelers.
 </p>
 </section>
@@ -372,11 +423,11 @@ Designed for couples, creatives, nature lovers and slow travelers.
 
   <div class="direct-header">
 
-    <p class="direct-label">BOOK DIRECT</p>
+    <p class="direct-label" data-i18n="directLabel">BOOK DIRECT</p>
 
-    <h2>Why book directly with Casa del Bosque</h2>
+    <h2 data-i18n="directTitle">Why book directly with Casa del Bosque</h2>
 
-    <p class="direct-intro">
+    <p class="direct-intro" data-i18n="directIntro">
       Enjoy a more personal and flexible experience while supporting regenerative hospitality directly.
     </p>
 
@@ -385,29 +436,29 @@ Designed for couples, creatives, nature lovers and slow travelers.
   <div class="direct-grid">
 
     <div class="direct-card">
-      <h3>Better Rates</h3>
-      <p>
+      <h3 data-i18n="direct1Title">Better Rates</h3>
+      <p data-i18n="direct1Text">
         Access direct pricing without third-party platform fees.
       </p>
     </div>
 
     <div class="direct-card">
-      <h3>Personalized Stay</h3>
-      <p>
+      <h3 data-i18n="direct2Title">Personalized Stay</h3>
+      <p data-i18n="direct2Text">
         Get recommendations, local guidance and flexible communication directly with the property.
       </p>
     </div>
 
     <div class="direct-card">
-      <h3>Direct WhatsApp Concierge</h3>
-      <p>
+      <h3 data-i18n="direct3Title">Direct WhatsApp Concierge</h3>
+      <p data-i18n="direct3Text">
         Faster responses, personalized support and easier reservation coordination.
       </p>
     </div>
 
     <div class="direct-card">
-      <h3>Support Regenerative Travel</h3>
-      <p>
+      <h3 data-i18n="direct4Title">Support Regenerative Travel</h3>
+      <p data-i18n="direct4Text">
         Your booking directly supports local hospitality and slower, more intentional tourism.
       </p>
     </div>
@@ -416,7 +467,7 @@ Designed for couples, creatives, nature lovers and slow travelers.
 
 </section>
 
-  
+
 
 <section class="story-section">
 
@@ -428,24 +479,24 @@ Designed for couples, creatives, nature lovers and slow travelers.
 
     <div class="story-content">
 
-      <p class="story-label">THE STORY</p>
+      <p class="story-label" data-i18n="storyLabel">THE STORY</p>
 
-      <h2>
+      <h2 data-i18n="storyTitle">
         More than a stay — a slower way to experience the Sierra Nevada
       </h2>
 
-      <p>
+      <p data-i18n="storyP1">
         Hidden above the Caribbean coast and surrounded by rainforest canopy,
         Casa del Bosque was created as a place to slow down.
       </p>
 
-      <p>
+      <p data-i18n="storyP2">
         Here, mornings begin with birdsong, mountain mist and open jungle views.
         Architecture blends into the landscape, encouraging guests to reconnect
         with silence, nature and a more intentional rhythm of travel.
       </p>
 
-      <p>
+      <p data-i18n="storyP3">
         Inspired by regenerative hospitality and the Sierra Nevada environment,
         Casa del Bosque invites travelers to experience the jungle with presence,
         simplicity and care.
@@ -458,13 +509,19 @@ Designed for couples, creatives, nature lovers and slow travelers.
 </section>
 
 
-  <div class="footer">Powered by Selvatica Direct Booking Suite</div>
+  <div class="footer" data-i18n="footer">Powered by Selvatica Direct Booking Suite</div>
 </div>
 
 <div class="modal" id="modal" onclick="if(event.target.id==='modal')closeModal()">
   <div class="modal-card">
     <div class="modal-img" id="modalImg"></div>
-    <div class="modal-content"><button class="close" onclick="closeModal()">Close</button><h3 id="modalTitle"></h3><p class="desc" id="modalDesc"></p><div class="meta" id="modalMeta"></div><button class="whatsapp" id="modalBtn">Book via WhatsApp</button></div>
+    <div class="modal-content">
+      <button class="close" data-i18n="btnClose" onclick="closeModal()">Close</button>
+      <h3 id="modalTitle"></h3>
+      <p class="desc" id="modalDesc"></p>
+      <div class="meta" id="modalMeta"></div>
+      <button class="whatsapp" id="modalBtn" data-i18n="btnBookWA">Book via WhatsApp</button>
+    </div>
   </div>
 </div>
 
@@ -472,49 +529,151 @@ Designed for couples, creatives, nature lovers and slow travelers.
 <script src="editable-config.js"></script>
 <script>
 let config = hotelConfig;
+
+/* ═══════════════════════════════════════════════
+   LANGUAGE STATE
+   ═══════════════════════════════════════════════ */
+let currentLang = (function(){
+  const saved = localStorage.getItem('cdb-lang');
+  if (saved && config.i18n[saved]) return saved;
+  const browserLang = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+  return config.i18n[browserLang] ? browserLang : (config.defaultLang || 'en');
+})();
+
+function t(key){
+  return (config.i18n[currentLang] && config.i18n[currentLang][key]) || '';
+}
+
+function setLanguage(lang){
+  if (!config.i18n[lang]) return;
+  currentLang = lang;
+  localStorage.setItem('cdb-lang', lang);
+  document.documentElement.lang = lang;
+
+  // Update active button
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  // Apply all data-i18n texts
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    const val = t(key);
+    if (val) el.textContent = val;
+  });
+
+  // Translate guests dropdown options
+  const guests = document.getElementById('guests');
+  const guestsOpts = t('guestsOptions') || [];
+  if (Array.isArray(guestsOpts) && guests){
+    Array.from(guests.options).forEach((opt, i)=>{
+      if (guestsOpts[i]) opt.textContent = guestsOpts[i];
+    });
+  }
+
+  // Re-apply brand + rooms in the new language
+  applyBrand();
+  // Re-render rooms with currently filtered set (or all)
+  const ci = document.getElementById('checkin').value;
+  const co = document.getElementById('checkout').value;
+  if (ci && co && new Date(co) > new Date(ci)) {
+    document.getElementById('dateText').textContent = formatAvailableText(ci, co);
+    renderRooms(config.rooms.filter(u=>isAvailable(u,ci,co)));
+  } else {
+    renderRooms(config.rooms);
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   DATES / HELPERS
+   ═══════════════════════════════════════════════ */
 function todayPlus(days){const d=new Date();d.setDate(d.getDate()+days);return d.toISOString().split('T')[0];}
 document.getElementById('checkin').value=todayPlus(1);
 document.getElementById('checkout').value=todayPlus(3);
 
 function applyBrand(){
-  document.getElementById('propertyBadge').textContent = config.badge;
-  document.getElementById('heroTitle').textContent = config.heroTitle;
-  document.getElementById('heroSubtitle').textContent = config.heroSubtitle;
+  document.getElementById('propertyBadge').textContent = t('badge');
+  document.getElementById('heroTitle').textContent    = t('heroTitle');
+  document.getElementById('heroSubtitle').textContent = t('heroSubtitle');
   document.getElementById('hero').style.setProperty('--hero', `url('${config.heroImage}')`);
 }
+
 function dateRange(start,end){const dates=[];let d=new Date(start+'T00:00:00');const e=new Date(end+'T00:00:00');while(d<e){dates.push(d.toISOString().split('T')[0]);d.setDate(d.getDate()+1);}return dates;}
 function isAvailable(room,ci,co){const requested=dateRange(ci,co);return !requested.some(d=>(room.blockedDates||[]).includes(d));}
 function nights(ci,co){return Math.max(0,Math.round((new Date(co)-new Date(ci))/(1000*60*60*24)));}
 function fmt(d){const [y,m,day]=d.split('-');return `${m}/${day}/${y}`;}
 function escapeHtml(str){return String(str||'').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
 
+function formatAvailableText(ci, co){
+  const tpl = t('availableForText') || 'Available for {ci} to {co} · {n} nights';
+  return tpl.replace('{ci}', fmt(ci)).replace('{co}', fmt(co)).replace('{n}', nights(ci,co));
+}
+
+/* ═══════════════════════════════════════════════
+   ROOMS RENDER
+   ═══════════════════════════════════════════════ */
+function getRoomI18n(u){ return (u.i18n && u.i18n[currentLang]) || {}; }
+
 function filterRooms(){
  const ci=document.getElementById('checkin').value, co=document.getElementById('checkout').value;
- if(!ci||!co||new Date(co)<=new Date(ci)){alert('Please select valid check-in and check-out dates.');return;}
- document.getElementById('dateText').textContent=`Available for ${fmt(ci)} to ${fmt(co)} · ${nights(ci,co)} nights`;
+ if(!ci||!co||new Date(co)<=new Date(ci)){alert(t('alertInvalidDates'));return;}
+ document.getElementById('dateText').textContent = formatAvailableText(ci, co);
  renderRooms(config.rooms.filter(u=>isAvailable(u,ci,co)));
 }
+
 function renderRooms(list){
  const root=document.getElementById('rooms'), empty=document.getElementById('empty'); root.innerHTML='';
  empty.classList.toggle('show',list.length===0);
  list.forEach(u=>{
+  const r = getRoomI18n(u);
+  const desc = r.description || '';
+  const amenities = r.amenities || [];
   const card=document.createElement('div'); card.className='room';
-  card.innerHTML=`<div class="room-img" style="background-image:url('${u.image}')"><div class="room-status">Available</div></div><div class="room-body"><h3>${escapeHtml(u.name)}</h3><p class="desc">${escapeHtml(u.description)}</p><div class="meta">${(u.amenities||[]).map(a=>`<span class="pill">${escapeHtml(a)}</span>`).join('')}</div><div class="price">${config.currency}${u.price} <span>/ night</span></div><div class="actions"><button class="secondary" onclick="viewDetails('${u.id}')">View details</button><button class="whatsapp" onclick="bookWhatsApp('${u.id}')">Book via WhatsApp</button></div></div>`;
+  card.innerHTML=`<div class="room-img" style="background-image:url('${u.image}')"><div class="room-status">${escapeHtml(t('statusAvailable'))}</div></div><div class="room-body"><h3>${escapeHtml(u.name)}</h3><p class="desc">${escapeHtml(desc)}</p><div class="meta">${amenities.map(a=>`<span class="pill">${escapeHtml(a)}</span>`).join('')}</div><div class="price">${config.currency}${u.price} <span>${escapeHtml(t('pricePerNight'))}</span></div><div class="actions"><button class="secondary" onclick="viewDetails('${u.id}')">${escapeHtml(t('btnViewDetails'))}</button><button class="whatsapp" onclick="bookWhatsApp('${u.id}')">${escapeHtml(t('btnBookWA'))}</button></div></div>`;
   root.appendChild(card);
  });
 }
+
+/* ═══════════════════════════════════════════════
+   WHATSAPP
+   ═══════════════════════════════════════════════ */
 function makeMessage(u){
- const ci=document.getElementById('checkin').value, co=document.getElementById('checkout').value, g=document.getElementById('guests').value;
- return `Hi! I would like to book the ${u.name} at ${config.propertyName} from ${fmt(ci)} to ${fmt(co)} for ${g}. Is it available?`;
+ const ci=document.getElementById('checkin').value, co=document.getElementById('checkout').value;
+ const g = document.getElementById('guests').selectedOptions[0].textContent;
+ const tpl = t('waBookMessage') || 'Hi! I would like to book the {room} at {property} from {ci} to {co} for {guests}. Is it available?';
+ return tpl
+   .replace('{room}', u.name)
+   .replace('{property}', config.propertyName)
+   .replace('{ci}', fmt(ci))
+   .replace('{co}', fmt(co))
+   .replace('{guests}', g);
 }
 function bookWhatsApp(id){const u=config.rooms.find(x=>x.id===id);window.open(`https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(makeMessage(u))}`,'_blank');}
-function generalWhatsApp(){window.open(`https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent('Hi! I would like to check availability for my dates.')}`,'_blank');}
-function viewDetails(id){const u=config.rooms.find(x=>x.id===id);document.getElementById('modalImg').style.backgroundImage=`url('${u.image}')`;document.getElementById('modalTitle').textContent=u.name;document.getElementById('modalDesc').textContent=u.description;document.getElementById('modalMeta').innerHTML=(u.amenities||[]).map(a=>`<span class="pill">${escapeHtml(a)}</span>`).join('');document.getElementById('modalBtn').onclick=()=>bookWhatsApp(id);document.getElementById('modal').classList.add('show');}
+function generalWhatsApp(){window.open(`https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(t('waGeneralMessage'))}`,'_blank');}
+
+/* ═══════════════════════════════════════════════
+   MODAL
+   ═══════════════════════════════════════════════ */
+function viewDetails(id){
+  const u=config.rooms.find(x=>x.id===id);
+  const r = getRoomI18n(u);
+  document.getElementById('modalImg').style.backgroundImage=`url('${u.image}')`;
+  document.getElementById('modalTitle').textContent = u.name;
+  document.getElementById('modalDesc').textContent  = r.description || '';
+  document.getElementById('modalMeta').innerHTML    = (r.amenities||[]).map(a=>`<span class="pill">${escapeHtml(a)}</span>`).join('');
+  document.getElementById('modalBtn').onclick=()=>bookWhatsApp(id);
+  document.getElementById('modal').classList.add('show');
+}
 function closeModal(){document.getElementById('modal').classList.remove('show');}
 
-applyBrand(); renderRooms(config.rooms);
+/* ═══════════════════════════════════════════════
+   WIRE LANG SWITCH + INITIALIZE
+   ═══════════════════════════════════════════════ */
+document.querySelectorAll('.lang-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=> setLanguage(btn.dataset.lang));
+});
+
+setLanguage(currentLang); // Initial render in the right language
 </script>
 </body>
 </html>
-
-<!-- test -->
