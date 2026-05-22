@@ -127,14 +127,15 @@ h1{font-size:clamp(42px,7vw,80px);line-height:.93;max-width:820px;margin-bottom:
 /* ═══ RATING BAR ═══ */
 .rating-bar{
   background:var(--green);
-  padding:20px 40px;
+  padding:22px 40px;
   display:flex;align-items:center;justify-content:center;
-  gap:32px;flex-wrap:wrap;
+  gap:28px;flex-wrap:wrap;
+  margin-bottom:36px;
 }
-.rating-item{display:flex;align-items:center;gap:10px;color:white;}
-.rating-stars{color:var(--gold);font-size:18px;letter-spacing:2px;}
-.rating-text{font-size:14px;font-weight:600;letter-spacing:.04em;}
-.rating-divider{width:1px;height:32px;background:rgba(255,255,255,.2);}
+.rating-item{display:flex;align-items:center;gap:10px;color:white;flex-shrink:0;}
+.rating-stars{color:var(--gold);font-size:17px;letter-spacing:2px;white-space:nowrap;}
+.rating-text{font-size:14px;font-weight:600;letter-spacing:.04em;white-space:nowrap;}
+.rating-divider{width:1px;height:28px;background:rgba(255,255,255,.2);flex-shrink:0;}
 
 /* ═══ SEARCH CARD ═══ */
 .search-card{
@@ -354,29 +355,6 @@ input:focus,select:focus{border-color:var(--green3);background:white}
     </div>
   </section>
 
-  <!-- RATING BAR -->
-  <div class="rating-bar">
-    <div class="rating-item">
-      <div class="reviews-score" style="gap:12px;margin:0;">
-        <span style="font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600;color:white;line-height:1;">5.0</span>
-        <div>
-          <div class="rating-stars">★★★★★</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:3px;" data-i18n="ratingSource">100 reviews · Airbnb</div>
-        </div>
-      </div>
-    </div>
-    <div class="rating-divider"></div>
-    <div class="rating-item">
-      <span style="font-size:20px;">🌿</span>
-      <span class="rating-text" data-i18n="ratingTag1">Eco-Lodge · Sierra Nevada</span>
-    </div>
-    <div class="rating-divider"></div>
-    <div class="rating-item">
-      <span style="font-size:20px;">🏔️</span>
-      <span class="rating-text" data-i18n="ratingTag2">Corredor Tayrona</span>
-    </div>
-  </div>
-
   <!-- SEARCH -->
   <section class="search-card">
     <div class="search-grid">
@@ -394,6 +372,27 @@ input:focus,select:focus{border-color:var(--green3);background:white}
       <button class="primary" data-i18n="btnCheckAvailability" onclick="filterRooms()">Check availability</button>
     </div>
   </section>
+
+  <!-- ROOMS -->
+  <div class="rating-bar">
+    <div class="rating-item">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:white;line-height:1;white-space:nowrap;">5.0</span>
+      <div style="margin-left:10px;">
+        <div class="rating-stars">★★★★★</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:3px;white-space:nowrap;" data-i18n="ratingSource">100 reviews · Airbnb</div>
+      </div>
+    </div>
+    <div class="rating-divider"></div>
+    <div class="rating-item">
+      <span style="font-size:18px;">🌿</span>
+      <span class="rating-text" data-i18n="ratingTag1">Eco-Lodge · Sierra Nevada</span>
+    </div>
+    <div class="rating-divider"></div>
+    <div class="rating-item">
+      <span style="font-size:18px;">🏔️</span>
+      <span class="rating-text" data-i18n="ratingTag2">Corredor Tayrona</span>
+    </div>
+  </div>
 
   <!-- ROOMS -->
   <div class="section-title">
