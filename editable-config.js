@@ -8,7 +8,7 @@ const hotelConfig = {
   i18n: {
     en: {
       badge: "Eco-Lodge · Sierra Nevada",
-      heroTitle: "Stay Above the Sierra Nevada Rainforest",
+      heroTitle: "Stay Above the Sierra Nevada",
       heroSubtitle: "Three private jungle suites. Birdsong at dawn. The Caribbean on the horizon. This is what slow luxury feels like.",
       heroScarcity: "Only 3 suites available",
       heroCta: "Book Your Jungle Escape",
@@ -93,7 +93,7 @@ const hotelConfig = {
 
     es: {
       badge: "Eco-Lodge · Sierra Nevada",
-      heroTitle: "Despertá sobre el dosel de la Sierra Nevada",
+      heroTitle: "Despertá sobre la Sierra Nevada",
       heroSubtitle: "Tres suites privadas en la selva. Cantos de aves al alba. El Caribe en el horizonte. Así se siente el lujo lento.",
       heroScarcity: "Solo 3 suites disponibles",
       heroCta: "Reservá tu escapada a la selva",
