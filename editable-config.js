@@ -75,7 +75,20 @@ const hotelConfig = {
       footer: "Powered by Selvatica Direct Booking Suite",
       alertInvalidDates: "Please select valid check-in and check-out dates.",
       waBookMessage: "Hi! I would like to book {room} at {property} from {ci} to {co} for {guests}. Is it available?",
-      waGeneralMessage: "Hi! I would like to book a stay at Casa del Bosque Tayrona. Can you help me with availability and rates?"
+      waGeneralMessage: "Hi! I would like to book a stay at Casa del Bosque Tayrona. Can you help me with availability and rates?",
+
+      ratingSource: "100 reviews · Airbnb",
+      ratingTag1: "Eco-Lodge · Sierra Nevada",
+      ratingTag2: "Corredor Tayrona",
+      testimonialsLabel: "GUEST REVIEWS",
+      testimonialsTitle: "What guests say",
+      reviewsCount: "100 reviews on Airbnb",
+      review1Text: '"La cabaña Guásimo es hermosa, en medio de la naturaleza y con una excelente vista del bosque. La cama es cómoda, el desayuno y la atención de Yuli son increíbles."',
+      review1Detail: "El Guásimo · March 2026",
+      review2Text: '"Un lugar muy hermoso y acogedor. La naturaleza, el silencio y las vistas son simplemente increíbles. Muy recomendado."',
+      review2Detail: "El Guásimo · March 2026",
+      review3Text: '"Siamo stati benissimo. La location toglie il fiato! La stanza era pulitissima e splendida. La colazione impagabile. Speriamo di tornare presto ❤️"',
+      review3Detail: "El Guásimo · March 2026"
     },
 
     es: {
@@ -147,7 +160,20 @@ const hotelConfig = {
       footer: "Powered by Selvatica Direct Booking Suite",
       alertInvalidDates: "Por favor seleccioná fechas válidas de llegada y salida.",
       waBookMessage: "¡Hola! Me gustaría reservar {room} en {property} del {ci} al {co} para {guests}. ¿Está disponible?",
-      waGeneralMessage: "¡Hola! Me gustaría reservar una estadía en Casa del Bosque Tayrona. ¿Me podés ayudar con disponibilidad y tarifas?"
+      waGeneralMessage: "¡Hola! Me gustaría reservar una estadía en Casa del Bosque Tayrona. ¿Me podés ayudar con disponibilidad y tarifas?",
+
+      ratingSource: "100 reseñas · Airbnb",
+      ratingTag1: "Eco-Lodge · Sierra Nevada",
+      ratingTag2: "Corredor Tayrona",
+      testimonialsLabel: "RESEÑAS DE HUÉSPEDES",
+      testimonialsTitle: "Lo que dicen nuestros huéspedes",
+      reviewsCount: "100 reseñas en Airbnb",
+      review1Text: '"La cabaña Guásimo es hermosa, en medio de la naturaleza y con una excelente vista del bosque. La cama es cómoda, el desayuno y la atención de Yuli son increíbles."',
+      review1Detail: "El Guásimo · Marzo 2026",
+      review2Text: '"Un lugar muy hermoso y acogedor. La naturaleza, el silencio y las vistas son simplemente increíbles. Muy recomendado."',
+      review2Detail: "El Guásimo · Marzo 2026",
+      review3Text: '"Siamo stati benissimo. La location toglie il fiato! La stanza era pulitissima e splendida. La colazione impagabile. Speriamo di tornare presto ❤️"',
+      review3Detail: "El Guásimo · Marzo 2026"
     }
   },
 
