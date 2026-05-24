@@ -93,10 +93,10 @@ const hotelConfig = {
 
     es: {
       badge: "Eco-Lodge · Sierra Nevada",
-      heroTitle: "Despertá sobre la Sierra Nevada",
+      heroTitle: "Despierta sobre la Sierra Nevada",
       heroSubtitle: "Tres suites privadas en la selva. Cantos de aves al alba. El Caribe en el horizonte. Así se siente el lujo lento.",
       heroScarcity: "Solo 3 suites disponibles",
-      heroCta: "Reservá tu escapada a la selva",
+      heroCta: "Reserva tu escapada a la selva",
       heroCtaSecondary: "Ver disponibilidad",
 
       labelCheckin: "Llegada",
@@ -107,11 +107,11 @@ const hotelConfig = {
       formNote: "La disponibilidad se basa en las fechas bloqueadas configuradas en editable-config.js.",
 
       availableStaysTitle: "Cabañas disponibles",
-      selectDatesText: "Seleccioná las fechas para ver las cabañas disponibles.",
+      selectDatesText: "Selecciona las fechas para ver las cabañas disponibles.",
       availableForText: "Disponible del {ci} al {co} · {n} noches",
       cabinTagline: "Cada cabaña fue diseñada para reconectarte con la naturaleza, el silencio y el slow living.",
       emptyTitle: "No hay disponibilidad para esas fechas",
-      emptyText: "Probá con otras fechas o contactanos directamente por WhatsApp.",
+      emptyText: "Intenta con otras fechas o contáctanos directamente por WhatsApp.",
       btnContactWA: "Contactar por WhatsApp",
       waFloatBtn: "Reservar por WhatsApp",
 
@@ -122,29 +122,29 @@ const hotelConfig = {
 
       experienceLabel: "LA EXPERIENCIA",
       experienceTitle: "Mañanas lentas sobre el dosel de la selva",
-      experienceIntro: "Despertá con cantos de aves, brisa de montaña y vistas panorámicas a la selva. Casa del Bosque fue diseñada para viajeros que buscan silencio, naturaleza y una conexión más profunda con el paisaje de la Sierra Nevada.",
+      experienceIntro: "Despierta con cantos de aves, brisa de montaña y vistas panorámicas a la selva. Casa del Bosque fue diseñada para viajeros que buscan silencio, naturaleza y una conexión más profunda con el paisaje de la Sierra Nevada.",
       exp1Title: "Amanecer & Vistas a la Selva",
-      exp1Text: "Despertá sobre el dosel con vistas panorámicas a la Sierra Nevada y al horizonte del Caribe.",
+      exp1Text: "Despierta sobre el dosel con vistas panorámicas a la Sierra Nevada y al horizonte del Caribe.",
       exp2Title: "Slow Living",
-      exp2Text: "Desconectate del ruido y reconectate con la naturaleza a través de mañanas lentas, sonidos del bosque y espacios al aire libre.",
+      exp2Text: "Desconéctate del ruido y reconéctate con la naturaleza a través de mañanas lentas, sonidos del bosque y espacios al aire libre.",
       exp3Title: "Confort al Aire Libre",
       exp3Text: "Terrazas privadas, duchas en la selva y arquitectura inmersa diseñada para fundirse con el paisaje.",
       experienceNote: "Diseñado para parejas, creativos, amantes de la naturaleza y viajeros lentos.",
 
       directLabel: "RESERVA DIRECTA",
       directTitle: "¿Por qué reservar directamente con Casa del Bosque?",
-      directIntro: "Disfrutá una experiencia más personal y flexible mientras apoyás directamente la hospitalidad regenerativa.",
+      directIntro: "Disfruta una experiencia más personal y flexible mientras apoya directamente la hospitalidad regenerativa.",
       trust1: "✓ Mejor tarifa garantizada",
       trust2: "✓ Solo 3 suites",
       trust3: "✓ Concierge directo por WhatsApp",
       trust4: "✓ Amanecer sobre la selva",
       direct1Title: "Mejores tarifas",
-      direct1Text: "Accedé a precios directos sin comisiones de plataformas externas.",
+      direct1Text: "Accede a precios directos sin comisiones de plataformas externas.",
       direct2Title: "Estancia personalizada",
-      direct2Text: "Recibí recomendaciones, guía local y comunicación flexible directamente con la propiedad.",
+      direct2Text: "Recibe recomendaciones, guía local y comunicación flexible directamente con la propiedad.",
       direct3Title: "Concierge directo por WhatsApp",
       direct3Text: "Respuestas más rápidas, soporte personalizado y coordinación de reservas sin complicaciones.",
-      direct4Title: "Apoyá el turismo regenerativo",
+      direct4Title: "Apoya el turismo regenerativo",
       direct4Text: "Tu reserva apoya directamente la hospitalidad local y un turismo más lento e intencional.",
 
       storyLabel: "NUESTRA HISTORIA",
@@ -154,11 +154,11 @@ const hotelConfig = {
       storyP1: "Escondida sobre la costa Caribe y rodeada de selva tropical, Casa del Bosque nació como un lugar para desacelerar.",
       storyP2: "Aquí, las mañanas comienzan con cantos de aves, niebla de montaña y vistas abiertas a la selva. La arquitectura se funde con el paisaje, invitando a los huéspedes a reconectarse con el silencio, la naturaleza y un ritmo de viaje más intencional.",
       storyP3: "Inspirada en la hospitalidad regenerativa y el entorno de la Sierra Nevada, Casa del Bosque invita a los viajeros a vivir la selva con presencia, simplicidad y cuidado.",
-      storyCtaBtn: "Reservá tu retiro →",
+      storyCtaBtn: "Reserva tu retiro →",
 
       btnClose: "Cerrar",
       footer: "Powered by Selvatica Direct Booking Suite",
-      alertInvalidDates: "Por favor seleccioná fechas válidas de llegada y salida.",
+      alertInvalidDates: "Por favor selecciona fechas válidas de llegada y salida.",
       waBookMessage: "¡Hola! Me gustaría reservar {room} en {property} del {ci} al {co} para {guests}. ¿Está disponible?",
       waGeneralMessage: "¡Hola! Me gustaría reservar una estadía en Casa del Bosque Tayrona. ¿Me podés ayudar con disponibilidad y tarifas?",
 
@@ -194,7 +194,7 @@ const hotelConfig = {
         },
         es: {
           type: "Suite Cabaña",
-          tagline: "Despertá sobre el dosel de la selva tropical.",
+          tagline: "Despierta sobre el dosel de la selva tropical.",
           description: "Vista privada a la selva, cama King, baño al aire libre y cantos de aves al amanecer. En una mañana de suerte, escucharás monos y ñeques entre los árboles — o simplemente observarás las aves saludar el amanecer de la Sierra.",
           amenities: ["Cama King", "Baño privado", "Vista a la selva", "Vista Sierra Nevada", "Vista al mar", "Hamacas", "2 huéspedes", "Desayuno incluido"]
         }
