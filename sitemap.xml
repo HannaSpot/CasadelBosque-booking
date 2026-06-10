@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://www.casadelbosquetayrona.com/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://casadelbosquetayrona.com/</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <url>
+    <loc>https://casadelbosquetayrona.com/booking_suite/journal/where-to-stay-near-tayrona-national-park.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://casadelbosquetayrona.com/booking_suite/journal/best-eco-lodge-near-tayrona-national-park.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://casadelbosquetayrona.com/booking_suite/journal/hotels-los-naranjos-santa-marta.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://casadelbosquetayrona.com/booking_suite/journal/private-jungle-cabin-near-tayrona.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://casadelbosquetayrona.com/booking_suite/journal/digital-nomad-retreat-colombia-caribbean-coast.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
 </urlset>
