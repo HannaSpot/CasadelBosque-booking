@@ -3,516 +3,841 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Casa del Bosque Tayrona | Direct Booking</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- SEO -->
+<title>Casa del Bosque Tayrona | Eco-Lodge · Sierra Nevada · Cabins</title>
+<meta name="description" content="Three private jungle suites above the Sierra Nevada canopy. Wake up with birdsong, panoramic mountain views and the Caribbean on the horizon. Book direct for the best rate." />
+<meta name="keywords" content="Casa del Bosque Tayrona, eco lodge Sierra Nevada, cabins Tayrona, jungle hotel Colombia, glamping Tayrona, hotel Buritaca, Sierra Nevada lodge" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://casadelbosquetayrona.com/" />
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23123524'/><text y='.9em' font-size='72' x='12'>🌿</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23123524'/><text y='.9em' font-size='72' x='12'>🌿</text></svg>">
+<link rel="alternate" hreflang="en" href="https://casadelbosquetayrona.com/" />
+<link rel="alternate" hreflang="es" href="https://casadelbosquetayrona.com/" />
+<link rel="alternate" hreflang="x-default" href="https://casadelbosquetayrona.com/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://casadelbosquetayrona.com/" />
+<meta property="og:title" content="Casa del Bosque Tayrona — Stay Above the Sierra Nevada Rainforest" />
+<meta property="og:description" content="Three private jungle suites. Birdsong at dawn. The Caribbean on the horizon. Book direct for the best rate." />
+<meta property="og:image" content="https://casadelbosquetayrona.com/images/hero.webp" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="es_CO" />
+<meta property="og:site_name" content="Casa del Bosque Tayrona" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Casa del Bosque Tayrona — Sierra Nevada Eco-Lodge" />
+<meta name="twitter:description" content="Three private jungle suites above the Sierra Nevada canopy. Book direct." />
+<meta name="twitter:image" content="https://casadelbosquetayrona.com/images/hero.webp" />
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Casa del Bosque Tayrona","description":"Boutique eco-lodge with three private jungle suites above the Sierra Nevada canopy.","url":"https://casadelbosquetayrona.com","telephone":"+573213221502","image":"https://casadelbosquetayrona.com/images/hero.webp","priceRange":"$$","address":{"@type":"PostalAddress","addressLocality":"Buritaca","addressRegion":"Magdalena","addressCountry":"CO"},"geo":{"@type":"GeoCoordinates","latitude":"11.2500","longitude":"-73.7833"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"100"},"containsPlace":[{"@type":"HotelRoom","name":"El Hobo"},{"@type":"HotelRoom","name":"El Guasimo Suite"},{"@type":"HotelRoom","name":"El Campano Suite"}]}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Preload hero image — fixes LCP -->
+<link rel="preload" as="image" href="./images/hero.webp" fetchpriority="high">
+
+<!-- Fonts async — no longer render-blocking -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <style>
 :root{
-  --green:#123524; --green2:#1f5137; --green3:#2f6b49; --sage:#eef4ec; --cream:#fbfaf5;
-  --gold:#b99a55; --border:#dfe5d8; --muted:#687264; --text:#172017; --white:#fff;
+  --green:#123524;--green2:#1f5137;--green3:#2f6b49;--sage:#eef4ec;--cream:#fbfaf5;
+  --gold:#b99a55;--border:#dfe5d8;--muted:#687264;--text:#172017;--white:#fff;
   --shadow:0 18px 60px rgba(18,53,36,.12);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);padding:28px 14px}
 button,input,select{font-family:'DM Sans',sans-serif}
-button{border:0;border-radius:14px;padding:14px 20px;font-weight:800;cursor:pointer;transition:.18s ease}
-button:hover{transform:translateY(-1px)}
-.wrap{
-  max-width:1120px;
-  margin:auto;
-}.hero{border-radius:30px;overflow:hidden;background:linear-gradient(135deg,rgba(18,53,36,.88),rgba(18,53,36,.55)),var(--hero);background-size:cover;background-position:center;padding:56px 36px;color:white;box-shadow:var(--shadow)}
-.badge{display:inline-block;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.13);padding:8px 18px;border-radius:999px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px}
+button{border:0;border-radius:14px;padding:14px 20px;font-weight:700;cursor:pointer;transition:.2s ease}
+button:hover{transform:translateY(-2px)}
 h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600}
-h1{font-size:clamp(42px,6vw,68px);line-height:.95;max-width:760px;margin-bottom:16px}
-.hero p{font-size:18px;line-height:1.6;max-width:680px;color:rgba(255,255,255,.88)}
-.search-card{background:white;margin:-32px auto 26px;max-width:980px;border:1px solid var(--border);border-radius:24px;padding:18px;box-shadow:var(--shadow);position:relative}
+.wrap{max-width:1120px;margin:auto;}
+
+/* ═══ LANG SWITCH ═══ */
+.lang-switch{
+  position:fixed;top:18px;right:18px;z-index:100;
+  display:flex;gap:2px;background:rgba(255,255,255,.96);
+  padding:4px;border-radius:999px;
+  box-shadow:0 4px 20px rgba(18,53,36,.18);
+  backdrop-filter:blur(10px);border:1px solid var(--border);
+}
+.lang-btn{
+  border:0;background:transparent;cursor:pointer;
+  padding:8px 16px;border-radius:999px;
+  font-family:'DM Sans',sans-serif;font-size:12px;
+  letter-spacing:.12em;font-weight:700;
+  color:var(--muted);transition:.2s ease;
+}
+.lang-btn:hover{transform:none;color:var(--green)}
+.lang-btn.active{background:var(--green);color:white;}
+
+/* ═══ FLOATING WHATSAPP ═══ */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:99;
+  background:#25D366;color:white;border-radius:999px;
+  padding:14px 22px;display:flex;align-items:center;gap:10px;
+  box-shadow:0 8px 30px rgba(37,211,102,.35);
+  font-weight:700;font-size:14px;
+  transition:transform .25s,box-shadow .25s;
+  cursor:pointer;border:0;font-family:'DM Sans',sans-serif;
+}
+.wa-float:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(37,211,102,.5);}
+.wa-float svg{width:22px;height:22px;flex-shrink:0;}
+
+/* ═══ HERO ═══ */
+.hero{
+  border-radius:28px;overflow:hidden;
+  background:#0f2218;
+  padding:80px 48px 100px;color:white;
+  box-shadow:var(--shadow);min-height:82vh;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  position:relative;
+}
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.38) 0%,
+    rgba(0,0,0,.32) 40%,
+    rgba(0,0,0,.72) 100%
+  );
+  z-index:1;
+}
+.hero-top{position:absolute;top:32px;left:48px;display:flex;align-items:center;flex-wrap:wrap;gap:10px;z-index:2;}
+.hero-bottom{position:relative;z-index:2;}
+.badge{
+  display:inline-block;border:1px solid rgba(255,255,255,.4);
+  background:rgba(255,255,255,.12);backdrop-filter:blur(8px);
+  padding:8px 18px;border-radius:999px;font-size:11px;letter-spacing:2px;text-transform:uppercase;
+}
+.hero-scarcity{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(185,154,85,.25);border:1px solid rgba(185,154,85,.55);
+  padding:8px 16px;border-radius:999px;font-size:12px;color:rgba(255,255,255,.95);
+}
+.hero-scarcity::before{content:'';width:7px;height:7px;border-radius:50%;background:#b99a55;animation:pulse 2s ease infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{
+  font-size:clamp(40px,6.5vw,76px);line-height:.93;max-width:760px;margin-bottom:20px;
+  text-shadow:0 2px 16px rgba(0,0,0,.5);
+}
+.hero-sub{
+  font-size:clamp(16px,2vw,20px);
+  line-height:1.7;
+  max-width:560px;
+  color:rgba(255,255,255,.92);
+  margin-bottom:32px;
+  text-shadow:0 1px 8px rgba(0,0,0,.4);
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-hero-primary{
+  background:var(--gold);color:var(--green);
+  padding:16px 32px;border-radius:14px;
+  font-weight:800;font-size:15px;border:0;cursor:pointer;
+  transition:.2s ease;text-decoration:none;display:inline-block;
+}
+.btn-hero-primary:hover{background:#c9aa66;transform:translateY(-2px);}
+.btn-hero-outline{
+  background:rgba(255,255,255,.12);color:white;
+  padding:16px 28px;border-radius:14px;font-weight:600;font-size:15px;
+  border:1px solid rgba(255,255,255,.35);cursor:pointer;
+  backdrop-filter:blur(8px);transition:.2s ease;
+  text-decoration:none;display:inline-block;
+}
+.btn-hero-outline:hover{background:rgba(255,255,255,.22);}
+
+/* ═══ RATING BAR ═══ */
+.rating-bar{
+  background:var(--green);
+  padding:22px 40px;
+  display:flex;align-items:center;justify-content:center;
+  gap:28px;flex-wrap:wrap;
+  margin-bottom:36px;
+}
+.rating-item{display:flex;align-items:center;gap:10px;color:white;flex-shrink:0;}
+.rating-stars{color:var(--gold);font-size:17px;letter-spacing:2px;white-space:nowrap;}
+.rating-text{font-size:14px;font-weight:600;letter-spacing:.04em;white-space:nowrap;}
+.rating-divider{width:1px;height:28px;background:rgba(255,255,255,.2);flex-shrink:0;}
+
+/* ═══ SEARCH CARD ═══ */
+.search-card{
+  background:white;margin:-28px auto 32px;max-width:980px;
+  border:1px solid var(--border);border-radius:24px;
+  padding:20px;box-shadow:var(--shadow);position:relative;z-index:10;
+}
 .search-grid{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:12px;align-items:end}
-.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:7px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.field label{display:block;font-size:11px;color:var(--muted);margin-bottom:7px;font-weight:800;text-transform:uppercase;letter-spacing:.1em}
 input,select{width:100%;border:1px solid var(--border);background:var(--cream);border-radius:14px;padding:13px 14px;font-size:15px;color:var(--text);outline:none}
 input:focus,select:focus{border-color:var(--green3);background:white}
-.primary{background:var(--green);color:white;white-space:nowrap}.primary:hover{background:var(--green2)}
-.small{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.45}
-.section-title{display:flex;justify-content:space-between;align-items:end;margin:30px 0 15px;gap:18px}
-.section-title h2{font-size:42px}.section-title p{color:var(--muted);font-size:14px;max-width:560px;line-height:1.55}
-.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.room{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:24px;
-  overflow:hidden;
-  transition:transform .35s ease, box-shadow .35s ease;
+.primary{background:var(--green);color:white;white-space:nowrap;font-size:15px;}.primary:hover{background:var(--green2)}
+
+/* ═══ SECTION TITLE ═══ */
+.section-title{display:flex;justify-content:space-between;align-items:end;margin:36px 0 20px;gap:18px}
+.section-title h2{font-size:44px}.section-title p{color:var(--muted);font-size:14px;max-width:520px;line-height:1.6;font-style:italic;}
+
+/* ═══ ROOMS ═══ */
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.room{background:white;border:1px solid var(--border);border-radius:24px;overflow:hidden;transition:transform .4s ease,box-shadow .4s ease;display:flex;flex-direction:column;}
+.room:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(18,53,36,.14);}
+.room-img{height:280px;background-size:cover;background-position:center;position:relative;overflow:hidden;}
+.room-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(18,53,36,.6) 100%);opacity:0;transition:opacity .4s ease;}
+.room:hover .room-img::after{opacity:1;}
+.room-status{position:absolute;top:14px;left:14px;z-index:2;background:rgba(255,255,255,.95);color:var(--green);font-size:11px;font-weight:800;padding:7px 13px;border-radius:999px;}
+.room-body{padding:22px;flex:1;display:flex;flex-direction:column}
+.room h3{font-size:32px;margin-bottom:4px;line-height:1.05;}
+.room-tagline{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--gold);margin-bottom:10px;}
+.desc{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:14px}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.pill{background:var(--sage);color:var(--green2);font-size:12px;padding:6px 11px;border-radius:999px;font-weight:600}
+.price{font-size:24px;color:var(--green);font-weight:900;margin-top:auto;margin-bottom:14px}.price span{font-size:13px;color:var(--muted);font-weight:500}
+.actions{display:grid;grid-template-columns:1fr 1.2fr;gap:8px}
+.secondary{background:white;color:var(--green);border:1px solid var(--border);}
+.whatsapp{background:#1f7a4b;color:white;}.whatsapp:hover{background:#16653d}
+.empty{display:none;background:white;border:1px solid var(--border);border-radius:22px;padding:40px;text-align:center;color:var(--muted)}.empty.show{display:block}
+
+/* ═══ EXPERIENCE ═══ */
+.experience-section{padding:110px 40px;max-width:1200px;margin:0 auto;}
+.experience-header{text-align:center;margin-bottom:60px;}
+.section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:700;display:block;}
+.experience-header h2{font-size:clamp(36px,5vw,56px);line-height:1.05;margin-bottom:22px;color:#1d2a1f;}
+.experience-intro{max-width:740px;margin:0 auto;font-size:18px;line-height:1.85;color:#5f675d;}
+.experience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.experience-card{background:#f7f5ef;border:1px solid var(--border);border-radius:24px;overflow:hidden;transition:transform .4s ease,box-shadow .4s ease;}
+.experience-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(0,0,0,.09);}
+.experience-card img{width:100%;height:260px;object-fit:cover;}
+.experience-card h3{font-size:27px;margin:22px 24px 12px;color:#1d2a1f;}
+.experience-card p{margin:0 24px 28px;color:#5f675d;line-height:1.7;font-size:15px;}
+.experience-note{text-align:center;margin-top:48px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--gold);}
+
+/* ═══ TESTIMONIALS ═══ */
+.testimonials-section{
+  background:var(--green);
+  padding:90px 40px;
 }
-.room:hover{
-  transform:translateY(-6px);
-  box-shadow:0 20px 40px rgba(0,0,0,.08);
+.testimonials-inner{max-width:1120px;margin:0 auto;}
+.testimonials-header{text-align:center;margin-bottom:52px;}
+.testimonials-header h2{font-size:clamp(32px,4vw,48px);color:white;margin-bottom:8px;}
+.testimonials-subhead{font-size:15px;color:rgba(255,255,255,.6);margin-top:10px;}
+.reviews-score{
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  margin-bottom:14px;
 }
-.room-img{
-  height:190px;
-  background-size:cover;
-  background-position:center;
-  position:relative;
-}.room-status{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.94);color:var(--green);font-size:12px;font-weight:800;padding:7px 11px;border-radius:999px}
-.room-body{padding:18px;flex:1;display:flex;flex-direction:column}
-.room h3{font-size:29px;margin-bottom:6px}
-.desc{color:var(--muted);font-size:14px;line-height:1.55;margin-bottom:12px}
-.meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
-.pill{background:var(--sage);color:var(--green2);font-size:12px;padding:6px 10px;border-radius:999px;font-weight:700}
-.price{font-size:22px;color:var(--green);font-weight:900;margin-top:auto;margin-bottom:14px}.price span{font-size:13px;color:var(--muted);font-weight:500}
-.actions{display:grid;grid-template-columns:1fr 1.2fr;gap:8px}.secondary{background:white;color:var(--green);border:1px solid var(--border)}.whatsapp{background:#1f7a4b;color:white}.whatsapp:hover{background:#16653d}
-.notice{margin-top:18px;background:#fff8e8;border:1px solid #efd99b;border-radius:18px;padding:15px 17px;color:#6c561b;font-size:14px;line-height:1.55}
-.empty{display:none;background:white;border:1px solid var(--border);border-radius:22px;padding:34px;text-align:center;color:var(--muted)}.empty.show{display:block}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.48);display:none;align-items:center;justify-content:center;padding:20px;z-index:20}.modal.show{display:flex}
-.modal-card{background:white;border-radius:24px;max-width:650px;width:100%;overflow:hidden;box-shadow:var(--shadow)}
-.modal-img{height:260px;background-size:cover;background-position:center}.modal-content{padding:22px}.modal-content h3{font-size:36px}.close{float:right;background:var(--sage);color:var(--green);padding:8px 12px;border-radius:999px}
-.footer{text-align:center;margin:32px 0 0;color:var(--muted);font-size:12px}
-@media(max-width:900px){.search-grid{grid-template-columns:1fr 1fr}.search-grid .primary{grid-column:1/-1}.rooms{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){body{padding:12px}.hero{padding:38px 22px;border-radius:22px}h1{font-size:40px}.search-card{margin-top:-20px}.search-grid,.rooms{grid-template-columns:1fr}.section-title{display:block}.actions{grid-template-columns:1fr}.room-img{height:220px}}
-.experience-section {
-  padding: 140px 40px;
-  max-width: 1200px;
-  margin: 0 auto;
+.reviews-score .big-score{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:white;line-height:1;}
+.reviews-score-right{}
+.reviews-score-right .stars{color:var(--gold);font-size:22px;letter-spacing:3px;}
+.reviews-score-right p{color:rgba(255,255,255,.65);font-size:13px;margin-top:4px;}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.testimonial-card{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;padding:28px;
+  transition:background .3s;
 }
-
-.experience-header {
-  text-align: center;
-  margin-bottom: 60px;
+.testimonial-card:hover{background:rgba(255,255,255,.11);}
+.t-stars{color:var(--gold);font-size:15px;letter-spacing:2px;margin-bottom:14px;}
+.t-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:19px;font-style:italic;font-weight:400;
+  color:rgba(255,255,255,.9);line-height:1.55;margin-bottom:18px;
 }
-
-.experience-label {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #6f7d68;
-  margin-bottom: 14px;
+.t-author{display:flex;align-items:center;gap:10px;}
+.t-avatar{
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(185,154,85,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;color:var(--gold);flex-shrink:0;
 }
+.t-name{font-size:13px;font-weight:700;color:white;}
+.t-detail{font-size:12px;color:rgba(255,255,255,.45);margin-top:2px;}
 
-.experience-header h2 {
-  font-size: 54px;
-  line-height: 1.1;
-  margin-bottom: 24px;
-  color: #1d2a1f;
+/* ═══ DIRECT BOOKING ═══ */
+.direct-section{padding:100px 40px 80px;max-width:1200px;margin:0 auto;}
+.direct-header{text-align:center;margin-bottom:48px;}
+.direct-header h2{font-size:clamp(34px,4vw,50px);line-height:1.05;margin-bottom:18px;color:#1d2a1f;}
+.direct-intro{max-width:660px;margin:0 auto;font-size:17px;line-height:1.8;color:#5f675d;}
+.trust-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px;}
+.trust-pill{background:var(--sage);color:var(--green2);padding:10px 18px;border-radius:999px;font-size:13px;font-weight:700;}
+.direct-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:44px;}
+.direct-card{background:#f7f5ef;border-radius:24px;padding:34px;transition:.35s ease;border:1px solid transparent;}
+.direct-card:hover{transform:translateY(-6px);border-color:var(--border);box-shadow:0 16px 40px rgba(18,53,36,.08);}
+.direct-card-icon{font-size:26px;margin-bottom:12px;}
+.direct-card h3{font-size:25px;margin-bottom:10px;color:#1d2a1f;}
+.direct-card p{color:#5f675d;line-height:1.75;font-size:15px;}
+
+/* ═══ STORY ═══ */
+.story-section{background:var(--green);margin:60px -14px 0;padding:0;overflow:hidden;}
+.story-inner{display:grid;grid-template-columns:1.1fr 1fr;min-height:680px;}
+.story-image{position:relative;overflow:hidden;}
+.story-image img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.88) saturate(1.1);transition:transform 8s ease;}
+.story-image:hover img{transform:scale(1.04);}
+.story-pull{
+  position:absolute;bottom:36px;left:32px;right:32px;
+  background:rgba(18,53,36,.78);backdrop-filter:blur(12px);
+  border:1px solid rgba(185,154,85,.3);border-radius:18px;padding:22px 26px;
 }
+.story-pull blockquote{font-family:'Cormorant Garamond',serif;font-size:21px;font-style:italic;color:rgba(255,255,255,.92);line-height:1.45;}
+.story-pull cite{display:block;margin-top:10px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+.story-content{padding:68px 56px;display:flex;flex-direction:column;justify-content:center;}
+.story-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:700;}
+.story-content h2{font-size:clamp(30px,3vw,46px);line-height:1.05;margin-bottom:8px;color:white;}
+.story-divider{width:44px;height:2px;background:var(--gold);margin:22px 0;}
+.story-content p{font-size:16px;line-height:1.9;color:rgba(255,255,255,.68);margin-bottom:16px;}
+.story-content p:last-of-type{margin-bottom:28px;}
+.btn-story{display:inline-flex;align-items:center;gap:10px;background:transparent;color:white;border:1px solid rgba(185,154,85,.6);border-radius:14px;padding:14px 24px;font-weight:700;font-size:14px;cursor:pointer;transition:.25s ease;width:fit-content;}
+.btn-story:hover{background:rgba(185,154,85,.15);border-color:var(--gold);}
 
-.experience-intro {
-  max-width: 760px;
-  margin: 0 auto;
-  font-size: 18px;
-  line-height: 1.8;
-  color: #5f675d;
-}
-
-.experience-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
-.experience-card {
-  background: #f7f5ef;
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.experience-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-}
-
-.experience-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
-.experience-card h3 {
-  font-size: 28px;
-  margin: 24px 24px 14px;
-  color: #1d2a1f;
-}
-
-.experience-card p {
-  margin: 0 24px 28px;
-  color: #5f675d;
-  line-height: 1.7;
-}
-
-.experience-note {
-  text-align: center;
-  margin-top: 50px;
-  font-size: 15px;
-  color: #6f7d68;
-}
-
-@media (max-width: 900px) {
-
-  .experience-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .experience-header h2 {
-    font-size: 40px;
-  }
-
-}
-
-/* Why Book Direct */
-.direct-section {
-  padding: 110px 40px 90px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.direct-header {
-  text-align: center;
-  margin-bottom: 58px;
-}
-
-.direct-label {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #6f7d68;
-  margin-bottom: 14px;
-  font-weight: 700;
-}
-
-.direct-header h2 {
-  font-size: 52px;
-  line-height: 1.05;
-  margin-bottom: 20px;
-  color: #1d2a1f;
-}
-
-.direct-intro {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 18px;
-  line-height: 1.8;
-  color: #5f675d;
-}
-
-.direct-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-}
-
-.direct-card{
-  background#f7f5ef;
-  border-radius:24px;
-  padding:36px;
-  transition:0.35s ease;
-}
-
-.direct-card:hover{
-  transform:translateY(-6px);
-}
-
-.direct-card h3{
-  font-size:28px;
-  margin-bottom:12px;
-  color:#1d2a1f;
-}
-
-.direct-card p{
-  color:#5f675d;
-  line-height:1.75;
-  font-size:15px;
-}
+/* ═══ MODAL ═══ */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:200;backdrop-filter:blur(4px);}
+.modal.show{display:flex}
+.modal-card{background:white;border-radius:24px;max-width:660px;width:100%;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.25);}
+.modal-img{height:280px;background-size:cover;background-position:center}
+.modal-content{padding:28px}
+.modal-content h3{font-size:36px;margin-bottom:8px;}
+.close{float:right;background:var(--sage);color:var(--green);padding:8px 14px;border-radius:999px;font-size:13px;}
 
 
-.story-section{
-  padding:120px 40px;
+/* ═══ TRAVEL JOURNAL ═══ */
+.journal-section{
+  padding:96px 40px 70px;
   max-width:1200px;
   margin:0 auto;
 }
-
-.story-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:center;
+.journal-header{
+  text-align:center;
+  margin-bottom:42px;
 }
-
-.story-image img{
-  width:100%;
-  border-radius:28px;
-  height:700px;
-  object-fit:cover;
-}
-
-.story-label{
-  font-size:12px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:#6f7d68;
-  margin-bottom:18px;
-  font-weight:700;
-}
-
-.story-content h2{
-  font-size:54px;
+.journal-header h2{
+  font-size:clamp(34px,4.8vw,54px);
   line-height:1.05;
-  margin-bottom:26px;
+  margin-bottom:16px;
   color:#1d2a1f;
 }
-
-.story-content p{
-  font-size:18px;
-  line-height:1.9;
+.journal-header p{
+  max-width:720px;
+  margin:0 auto;
   color:#5f675d;
-  margin-bottom:18px;
+  font-size:17px;
+  line-height:1.8;
+}
+.journal-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.journal-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:220px;
+  background:#f7f5ef;
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:28px;
+  text-decoration:none;
+  color:var(--text);
+  transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.journal-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(185,154,85,.55);
+  box-shadow:0 18px 48px rgba(18,53,36,.1);
+}
+.journal-card .journal-kicker{
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:800;
+  margin-bottom:14px;
+}
+.journal-card h3{
+  font-size:27px;
+  line-height:1.08;
+  color:#1d2a1f;
+  margin-bottom:14px;
+}
+.journal-card p{
+  color:#5f675d;
+  line-height:1.7;
+  font-size:14px;
+  margin-bottom:22px;
+}
+.journal-card .journal-link{
+  color:var(--green);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+@media(max-width:900px){
+  .journal-grid{grid-template-columns:1fr 1fr}
+  .journal-section{padding:70px 20px 50px}
+}
+@media(max-width:620px){
+  .journal-grid{grid-template-columns:1fr}
+  .journal-section{padding:60px 16px 44px}
+  .journal-card{min-height:auto}
 }
 
+/* ═══ FOOTER ═══ */
+.footer{text-align:center;margin:48px 0 0;color:var(--muted);font-size:12px;padding-bottom:100px;}
 
-@media (max-width: 900px) {
-  .direct-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .direct-header h2 {
-    font-size: 40px;
-  }
-
-  .direct-section,
-  .experience-section {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
+/* ═══ RESPONSIVE 900px ═══ */
+@media(max-width:900px){
+  .search-grid{grid-template-columns:1fr 1fr}.search-grid .primary{grid-column:1/-1}
+  .rooms{grid-template-columns:1fr 1fr}
+  .testimonials-grid{grid-template-columns:1fr}
+  .story-inner{grid-template-columns:1fr}
+  .story-image{height:400px}
+  .story-content{padding:44px 28px}
+  .direct-grid{grid-template-columns:1fr}
+  .experience-grid{grid-template-columns:1fr}
+  .experience-section,.direct-section{padding-left:20px;padding-right:20px}
+  .testimonials-section{padding:70px 20px}
+  .rating-bar{padding:16px 20px;gap:16px;}
+  .rating-divider{display:none;}
 }
 
+/* ═══ RESPONSIVE 620px (MOBILE) ═══ */
+@media(max-width:620px){
+  body{padding:12px}
+  .hero{padding:20px 20px 52px;border-radius:22px;min-height:78vh;justify-content:flex-end;}
+  .hero-top{position:static;display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:16px;z-index:2;}
+  .hero-bottom{position:relative;z-index:2;}
+  .badge{font-size:10px;padding:6px 12px;letter-spacing:1.5px;}
+  .hero-scarcity{margin-left:0;font-size:11px;padding:6px 12px;}
+  h1{font-size:clamp(32px,9vw,40px);margin-bottom:14px;line-height:.95;}
+  .hero-sub{font-size:15px;margin-bottom:22px;line-height:1.55;}
+  .hero-actions{flex-direction:column;gap:10px;}
+  .btn-hero-primary{text-align:center;width:100%;padding:16px 20px;}
+  .btn-hero-outline{text-align:center;width:100%;padding:12px 20px;font-size:14px;}
+  .search-card{margin-top:-20px;border-radius:20px;}
+  .search-grid,.rooms{grid-template-columns:1fr}
+  .section-title{display:block}
+  .actions{grid-template-columns:1fr}
+  .room-img{height:240px}
+  .story-section{margin:40px -12px 0}
+  .story-content{padding:32px 22px}
+  .story-pull{left:16px;right:16px;bottom:16px;padding:16px 18px;}
+  .story-pull blockquote{font-size:17px;}
+  .trust-pills{gap:8px}
+  .experience-section{padding:60px 16px}
+  .direct-section{padding:60px 16px}
+  .testimonials-grid{grid-template-columns:1fr}
+  .reviews-score .big-score{font-size:52px;}
+  .wa-float span{display:none;}
+  .wa-float{padding:16px;border-radius:50%;}
+  .lang-switch{top:12px;right:12px}
+  .lang-btn{padding:7px 12px;font-size:11px}
+}
 </style>
 </head>
 <body>
+
+<!-- FLOATING WHATSAPP -->
+<button class="wa-float" onclick="generalWhatsApp()">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.124 1.532 5.852L.07 23.197a.75.75 0 00.918.899l5.42-1.429A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.73 9.73 0 01-4.964-1.355l-.357-.21-3.706.977.994-3.629-.232-.373A9.715 9.715 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+  <span data-i18n="waFloatBtn">Book via WhatsApp</span>
+</button>
+
+<!-- LANGUAGE SWITCHER -->
+<div class="lang-switch" role="group" aria-label="Language">
+  <button class="lang-btn" data-lang="en">EN</button>
+  <button class="lang-btn" data-lang="es">ES</button>
+</div>
+
 <div class="wrap">
+
+  <!-- HERO -->
   <section class="hero" id="hero">
-    <div class="badge" id="propertyBadge"></div>
-    <h1 id="heroTitle"></h1>
-    <p id="heroSubtitle"></p>
+    <!-- Hero image as real img for faster LCP -->
+    <img src="./images/hero.webp" alt="Casa del Bosque Tayrona jungle canopy" 
+         fetchpriority="high" decoding="async"
+         style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+    <div class="hero-top">
+      <div class="badge" id="propertyBadge"></div>
+      <span class="hero-scarcity" data-i18n="heroScarcity">Only 3 suites available</span>
+    </div>
+    <div class="hero-bottom">
+      <h1 id="heroTitle"></h1>
+      <p class="hero-sub" id="heroSubtitle"></p>
+      <div class="hero-actions">
+        <button class="btn-hero-primary" onclick="generalWhatsApp()" data-i18n="heroCta">Book Your Jungle Escape</button>
+        <button class="btn-hero-outline" onclick="document.querySelector('.search-card').scrollIntoView({behavior:'smooth'})" data-i18n="heroCtaSecondary">Check Availability</button>
+      </div>
+    </div>
   </section>
 
+  <!-- SEARCH -->
   <section class="search-card">
     <div class="search-grid">
-      <div class="field"><label>Check-in</label><input type="date" id="checkin"></div>
-      <div class="field"><label>Check-out</label><input type="date" id="checkout"></div>
-      <div class="field"><label>Guests</label><select id="guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option><option>5+ guests</option></select></div>
-      <button class="primary" onclick="filterRooms()">Check availability</button>
+      <div class="field"><label data-i18n="labelCheckin">Check-in</label><input type="date" id="checkin"></div>
+      <div class="field"><label data-i18n="labelCheckout">Check-out</label><input type="date" id="checkout"></div>
+      <div class="field"><label data-i18n="labelGuests">Guests</label>
+        <select id="guests">
+          <option value="1"></option>
+          <option value="2" selected></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+        </select>
+      </div>
+      <button class="primary" data-i18n="btnCheckAvailability" onclick="filterRooms()">Check availability</button>
     </div>
-    <div class="small">Availability is based on blocked dates configured in editable-config.js.</div>
   </section>
 
+  <!-- ROOMS -->
+  <div class="rating-bar">
+    <div class="rating-item">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:white;line-height:1;white-space:nowrap;">5.0</span>
+      <div style="margin-left:10px;">
+        <div class="rating-stars">★★★★★</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:3px;white-space:nowrap;" data-i18n="ratingSource">100 reviews · Airbnb</div>
+      </div>
+    </div>
+    <div class="rating-divider"></div>
+    <div class="rating-item">
+      <span style="font-size:18px;">🌿</span>
+      <span class="rating-text" data-i18n="ratingTag1">Eco-Lodge · Sierra Nevada</span>
+    </div>
+    <div class="rating-divider"></div>
+    <div class="rating-item">
+      <span style="font-size:18px;">🏔️</span>
+      <span class="rating-text" data-i18n="ratingTag2">Corredor Tayrona</span>
+    </div>
+  </div>
+
+  <!-- ROOMS -->
   <div class="section-title">
-    <div><h2>Available stays</h2><p id="dateText">Select dates to see available units.</p></div>
-    <p>Each cabin was designed to reconnect you with nature, silence and slow living.</p>
+    <div>
+      <h2 data-i18n="availableStaysTitle">Available stays</h2>
+      <p id="dateText" data-i18n="selectDatesText">Select dates to see available units.</p>
+    </div>
+    <p data-i18n="cabinTagline">Each cabin was designed to reconnect you with nature, silence and slow living.</p>
   </div>
-
   <div class="rooms" id="rooms"></div>
-  <div class="empty" id="empty"><h2>No availability for those dates</h2><p>Try different dates or contact the property directly on WhatsApp.</p><br><button class="whatsapp" onclick="generalWhatsApp()">Contact via WhatsApp</button></div>
-
-
-
-<section class="experience-section">
-
-  <div class="experience-header">
-    <p class="experience-label">THE EXPERIENCE</p>
-
-    <h2>Slow mornings above the jungle canopy</h2>
-
-    <p class="experience-intro">
-      Wake up with birdsong, open-air mountain breezes and panoramic jungle views.
-      Casa del Bosque was designed for travelers seeking silence, nature and a
-      deeper connection with the Sierra Nevada landscape.
-    </p>
-  </div>
-<div class="experience-grid">
-
-  <div class="experience-card">
-    <img src="images/Sunrise-terrace.webp" alt="Jungle sunrise">
-
-    <h3>Sunrise & Jungle Views</h3>
-
-    <p>
-      Wake up above the canopy with panoramic views of the Sierra Nevada mountains
-      and the Caribbean horizon.
-    </p>
+  <div class="empty" id="empty">
+    <h2 data-i18n="emptyTitle">No availability for those dates</h2>
+    <p data-i18n="emptyText">Try different dates or contact us directly on WhatsApp.</p>
+    <br>
+    <button class="whatsapp" data-i18n="btnContactWA" onclick="generalWhatsApp()">Contact via WhatsApp</button>
   </div>
 
-  <div class="experience-card">
-    <img src="images/Hamock.webp" alt="Slow living">
+  <!-- EXPERIENCE -->
+  <section class="experience-section">
+    <div class="experience-header">
+      <span class="section-label" data-i18n="experienceLabel">THE EXPERIENCE</span>
+      <h2 data-i18n="experienceTitle">Slow mornings above the jungle canopy</h2>
+      <p class="experience-intro" data-i18n="experienceIntro">Wake up with birdsong, open-air mountain breezes and panoramic jungle views. Casa del Bosque was designed for travelers seeking silence, nature and a deeper connection with the Sierra Nevada landscape.</p>
+    </div>
+    <div class="experience-grid">
+      <div class="experience-card">
+        <img src="images/Sunrise.webp" alt="Jungle sunrise at Casa del Bosque Tayrona" loading="lazy">
+        <h3 data-i18n="exp1Title">Sunrise & Jungle Views</h3>
+        <p data-i18n="exp1Text">Wake up above the canopy with panoramic views of the Sierra Nevada mountains and the Caribbean horizon.</p>
+      </div>
+      <div class="experience-card">
+        <img src="images/Hamock.webp" alt="Slow living hammock jungle" loading="lazy">
+        <h3 data-i18n="exp2Title">Slow Living</h3>
+        <p data-i18n="exp2Text">Disconnect from noise and reconnect with nature through slower mornings, forest sounds and open-air spaces.</p>
+      </div>
+      <div class="experience-card">
+        <img src="images/terrace.webp" alt="Open air terrace Sierra Nevada" loading="lazy">
+        <h3 data-i18n="exp3Title">Open-Air Comfort</h3>
+        <p data-i18n="exp3Text">Private terraces, jungle showers and immersive architecture designed to blend into the surrounding landscape.</p>
+      </div>
+    </div>
+    <p class="experience-note" data-i18n="experienceNote">Designed for couples, creatives, nature lovers and slow travelers.</p>
+  </section>
 
-    <h3>Slow Living</h3>
+</div><!-- /wrap -->
 
-    <p>
-      Disconnect from noise and reconnect with nature through slower mornings,
-      forest sounds and open-air spaces.
-    </p>
+<!-- TESTIMONIALS — FULL WIDTH -->
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+    <div class="testimonials-header">
+      <span class="section-label" data-i18n="testimonialsLabel">GUEST REVIEWS</span>
+      <div class="reviews-score">
+        <span class="big-score">5.0</span>
+        <div class="reviews-score-right">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="reviewsCount">100 reviews on Airbnb</p>
+        </div>
+      </div>
+      <h2 data-i18n="testimonialsTitle">What guests say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote" data-i18n="review1Text">"La cabaña Guásimo es hermosa, en medio de la naturaleza y con una excelente vista del bosque. La cama es cómoda, el desayuno y la atención de Yuli son increíbles."</p>
+        <div class="t-author">
+          <div class="t-avatar">D</div>
+          <div>
+            <div class="t-name">Diana Priscila</div>
+            <div class="t-detail" data-i18n="review1Detail">El Guásimo · March 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote" data-i18n="review2Text">"Un lugar muy hermoso y acogedor. La naturaleza, el silencio y las vistas son simplemente increíbles. Muy recomendado."</p>
+        <div class="t-author">
+          <div class="t-avatar">D</div>
+          <div>
+            <div class="t-name">David Arturo</div>
+            <div class="t-detail" data-i18n="review2Detail">El Guásimo · March 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote" data-i18n="review3Text">"Siamo stati benissimo. La location toglie il fiato! La stanza era pulitissima e splendida. La colazione impagabile. Speriamo di tornare presto ❤️"</p>
+        <div class="t-author">
+          <div class="t-avatar">M</div>
+          <div>
+            <div class="t-name">Margot</div>
+            <div class="t-detail" data-i18n="review3Detail">El Guásimo · March 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="experience-card">
-    <img src="images/Main-terrace.webp" alt="Open air comfort">
+<div class="wrap">
 
-    <h3>Open-Air Comfort</h3>
-
-    <p>
-      Private terraces, jungle showers and immersive architecture designed to blend
-      into the surrounding landscape.
-    </p>
-  </div>
+  <!-- BOOK DIRECT -->
+  <section class="direct-section">
+    <div class="direct-header">
+      <span class="section-label" data-i18n="directLabel">BOOK DIRECT</span>
+      <h2 data-i18n="directTitle">Why book directly with Casa del Bosque</h2>
+      <p class="direct-intro" data-i18n="directIntro">Enjoy a more personal and flexible experience while supporting regenerative hospitality directly.</p>
+      <div class="trust-pills">
+        <span class="trust-pill" data-i18n="trust1">✓ Best rate guaranteed</span>
+        <span class="trust-pill" data-i18n="trust2">✓ Only 3 suites</span>
+        <span class="trust-pill" data-i18n="trust3">✓ Direct WhatsApp concierge</span>
+        <span class="trust-pill" data-i18n="trust4">✓ 100 five-star reviews</span>
+      </div>
+    </div>
+    <div class="direct-grid">
+      <div class="direct-card">
+        <div class="direct-card-icon">💰</div>
+        <h3 data-i18n="direct1Title">Better Rates</h3>
+        <p data-i18n="direct1Text">Access direct pricing without third-party platform fees.</p>
+      </div>
+      <div class="direct-card">
+        <div class="direct-card-icon">🌿</div>
+        <h3 data-i18n="direct2Title">Personalized Stay</h3>
+        <p data-i18n="direct2Text">Get recommendations, local guidance and flexible communication directly with the property.</p>
+      </div>
+      <div class="direct-card">
+        <div class="direct-card-icon">💬</div>
+        <h3 data-i18n="direct3Title">Direct WhatsApp Concierge</h3>
+        <p data-i18n="direct3Text">Faster responses, personalized support and easier reservation coordination.</p>
+      </div>
+      <div class="direct-card">
+        <div class="direct-card-icon">🌱</div>
+        <h3 data-i18n="direct4Title">Support Regenerative Travel</h3>
+        <p data-i18n="direct4Text">Your booking directly supports local hospitality and slower, more intentional tourism.</p>
+      </div>
+    </div>
+  </section>
 
 </div>
 
-<p class="experience-note">
-Designed for couples, creatives, nature lovers and slow travelers.
-</p>
-</section>
-
-<section class="direct-section">
-
-  <div class="direct-header">
-
-    <p class="direct-label">BOOK DIRECT</p>
-
-    <h2>Why book directly with Casa del Bosque</h2>
-
-    <p class="direct-intro">
-      Enjoy a more personal and flexible experience while supporting regenerative hospitality directly.
-    </p>
-
-  </div>
-
-  <div class="direct-grid">
-
-    <div class="direct-card">
-      <h3>Better Rates</h3>
-      <p>
-        Access direct pricing without third-party platform fees.
-      </p>
-    </div>
-
-    <div class="direct-card">
-      <h3>Personalized Stay</h3>
-      <p>
-        Get recommendations, local guidance and flexible communication directly with the property.
-      </p>
-    </div>
-
-    <div class="direct-card">
-      <h3>Direct WhatsApp Concierge</h3>
-      <p>
-        Faster responses, personalized support and easier reservation coordination.
-      </p>
-    </div>
-
-    <div class="direct-card">
-      <h3>Support Regenerative Travel</h3>
-      <p>
-        Your booking directly supports local hospitality and slower, more intentional tourism.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-  
-
+<!-- STORY — CINEMATIC FULL WIDTH -->
 <section class="story-section">
-
-  <div class="story-grid">
-
+  <div class="story-inner">
     <div class="story-image">
-      <img src="images/Sierra-Nevada.webp" alt="Sierra Nevada jungle">
+      <img src="images/Sierra.webp" alt="Sierra Nevada jungle Casa del Bosque" loading="lazy">
+      <div class="story-pull">
+        <blockquote data-i18n="storyQuote">"A place where the jungle teaches you to breathe again."</blockquote>
+        <cite data-i18n="storyQuoteCite">— A guest's journal, 2025</cite>
+      </div>
     </div>
-
     <div class="story-content">
-
-      <p class="story-label">THE STORY</p>
-
-      <h2>
-        More than a stay — a slower way to experience the Sierra Nevada
-      </h2>
-
-      <p>
-        Hidden above the Caribbean coast and surrounded by rainforest canopy,
-        Casa del Bosque was created as a place to slow down.
-      </p>
-
-      <p>
-        Here, mornings begin with birdsong, mountain mist and open jungle views.
-        Architecture blends into the landscape, encouraging guests to reconnect
-        with silence, nature and a more intentional rhythm of travel.
-      </p>
-
-      <p>
-        Inspired by regenerative hospitality and the Sierra Nevada environment,
-        Casa del Bosque invites travelers to experience the jungle with presence,
-        simplicity and care.
-      </p>
-
+      <p class="story-label" data-i18n="storyLabel">THE STORY</p>
+      <h2 data-i18n="storyTitle">More than a stay — a slower way to experience the Sierra Nevada</h2>
+      <div class="story-divider"></div>
+      <p data-i18n="storyP1">Hidden above the Caribbean coast and surrounded by rainforest canopy, Casa del Bosque was created as a place to slow down.</p>
+      <p data-i18n="storyP2">Here, mornings begin with birdsong, mountain mist and open jungle views. Architecture blends into the landscape, encouraging guests to reconnect with silence, nature and a more intentional rhythm of travel.</p>
+      <p data-i18n="storyP3">Inspired by regenerative hospitality and the Sierra Nevada environment, Casa del Bosque invites travelers to experience the jungle with presence, simplicity and care.</p>
+      <button class="btn-story" onclick="generalWhatsApp()" data-i18n="storyCtaBtn">Reserve your retreat →</button>
     </div>
-
   </div>
-
 </section>
 
 
-  <div class="footer">Powered by Selvatica Direct Booking Suite</div>
+<div class="wrap">
+  <!-- TRAVEL JOURNAL -->
+  <section class="journal-section" id="journal">
+    <div class="journal-header">
+      <span class="section-label">TRAVEL JOURNAL</span>
+      <h2>Explore Tayrona & the Sierra Nevada</h2>
+      <p>Practical travel guides for slow travelers, nature lovers, digital nomads and guests planning a deeper stay near Tayrona National Park.</p>
+    </div>
+
+    <div class="journal-grid">
+      <a class="journal-card" href="/booking_suite/journal/where-to-stay-near-tayrona-national-park.html">
+        <div>
+          <div class="journal-kicker">Tayrona guide</div>
+          <h3>Where to Stay Near Tayrona National Park</h3>
+          <p>A practical guide to choosing the right base near Tayrona: jungle lodges, private cabins and quiet stays close to the park.</p>
+        </div>
+        <span class="journal-link">Read guide →</span>
+      </a>
+
+      <a class="journal-card" href="/booking_suite/journal/best-eco-lodge-near-tayrona-national-park.html">
+        <div>
+          <div class="journal-kicker">Eco-lodge guide</div>
+          <h3>Best Eco Lodge Near Tayrona National Park</h3>
+          <p>What to look for in a true eco-lodge experience in the Sierra Nevada jungle, beyond ordinary hotel stays.</p>
+        </div>
+        <span class="journal-link">Read guide →</span>
+      </a>
+
+      <a class="journal-card" href="/booking_suite/journal/hotels-los-naranjos-santa-marta.html">
+        <div>
+          <div class="journal-kicker">Local area</div>
+          <h3>Hotels in Los Naranjos, Santa Marta</h3>
+          <p>Understand the Los Naranjos corridor, its quiet jungle setting and why it works well for travelers visiting Tayrona.</p>
+        </div>
+        <span class="journal-link">Read guide →</span>
+      </a>
+
+      <a class="journal-card" href="/booking_suite/journal/private-jungle-cabin-near-tayrona.html">
+        <div>
+          <div class="journal-kicker">Private cabins</div>
+          <h3>Private Jungle Cabin Near Tayrona</h3>
+          <p>What makes a private jungle cabin feel different: space, silence, views, open-air comfort and direct contact with nature.</p>
+        </div>
+        <span class="journal-link">Read guide →</span>
+      </a>
+
+      <a class="journal-card" href="/booking_suite/journal/digital-nomad-retreat-colombia-caribbean-coast.html">
+        <div>
+          <div class="journal-kicker">Remote work</div>
+          <h3>Digital Nomad Retreat on Colombia’s Caribbean Coast</h3>
+          <p>Why remote workers are choosing the Sierra Nevada foothills for focus, recovery and slow living near the Caribbean.</p>
+        </div>
+        <span class="journal-link">Read guide →</span>
+      </a>
+    </div>
+  </section>
 </div>
 
+<div class="wrap">
+  <div class="footer" data-i18n="footer">Powered by Selvatica Direct Booking Suite</div>
+</div>
+
+<!-- MODAL -->
 <div class="modal" id="modal" onclick="if(event.target.id==='modal')closeModal()">
   <div class="modal-card">
     <div class="modal-img" id="modalImg"></div>
-    <div class="modal-content"><button class="close" onclick="closeModal()">Close</button><h3 id="modalTitle"></h3><p class="desc" id="modalDesc"></p><div class="meta" id="modalMeta"></div><button class="whatsapp" id="modalBtn">Book via WhatsApp</button></div>
+    <div class="modal-content">
+      <button class="close" data-i18n="btnClose" onclick="closeModal()">Close</button>
+      <h3 id="modalTitle"></h3>
+      <p class="desc" id="modalDesc"></p>
+      <div class="meta" id="modalMeta"></div>
+      <br>
+      <button class="whatsapp" id="modalBtn" data-i18n="btnBookWA" style="width:100%;margin-top:8px;">Book via WhatsApp</button>
+    </div>
   </div>
 </div>
-
 
 <script src="editable-config.js"></script>
 <script>
 let config = hotelConfig;
-function todayPlus(days){const d=new Date();d.setDate(d.getDate()+days);return d.toISOString().split('T')[0];}
+
+let currentLang = (function(){
+  const saved = localStorage.getItem('cdb-lang');
+  if(saved && config.i18n[saved]) return saved;
+  const b = (navigator.language||'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+  return config.i18n[b] ? b : (config.defaultLang||'en');
+})();
+
+function t(key){ return (config.i18n[currentLang]&&config.i18n[currentLang][key])||''; }
+
+function setLanguage(lang){
+  if(!config.i18n[lang]) return;
+  currentLang = lang;
+  localStorage.setItem('cdb-lang', lang);
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.toggle('active',btn.dataset.lang===lang));
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ const v=t(el.getAttribute('data-i18n')); if(v) el.textContent=v; });
+  const guests=document.getElementById('guests');
+  const opts=t('guestsOptions')||[];
+  if(Array.isArray(opts)&&guests) Array.from(guests.options).forEach((o,i)=>{ if(opts[i]) o.textContent=opts[i]; });
+  applyBrand();
+  const ci=document.getElementById('checkin').value, co=document.getElementById('checkout').value;
+  if(ci&&co&&new Date(co)>new Date(ci)){
+    document.getElementById('dateText').textContent=fmtAvail(ci,co);
+    renderRooms(config.rooms.filter(u=>isAvailable(u,ci,co)));
+  } else { renderRooms(config.rooms); }
+}
+
+function todayPlus(d){const x=new Date();x.setDate(x.getDate()+d);return x.toISOString().split('T')[0];}
 document.getElementById('checkin').value=todayPlus(1);
 document.getElementById('checkout').value=todayPlus(3);
 
 function applyBrand(){
-  document.getElementById('propertyBadge').textContent = config.badge;
-  document.getElementById('heroTitle').textContent = config.heroTitle;
-  document.getElementById('heroSubtitle').textContent = config.heroSubtitle;
-  document.getElementById('hero').style.setProperty('--hero', `url('${config.heroImage}')`);
+  document.getElementById('propertyBadge').textContent=t('badge');
+  document.getElementById('heroTitle').textContent=t('heroTitle');
+  document.getElementById('heroSubtitle').textContent=t('heroSubtitle');
 }
-function dateRange(start,end){const dates=[];let d=new Date(start+'T00:00:00');const e=new Date(end+'T00:00:00');while(d<e){dates.push(d.toISOString().split('T')[0]);d.setDate(d.getDate()+1);}return dates;}
-function isAvailable(room,ci,co){const requested=dateRange(ci,co);return !requested.some(d=>(room.blockedDates||[]).includes(d));}
-function nights(ci,co){return Math.max(0,Math.round((new Date(co)-new Date(ci))/(1000*60*60*24)));}
-function fmt(d){const [y,m,day]=d.split('-');return `${m}/${day}/${y}`;}
-function escapeHtml(str){return String(str||'').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+function dateRange(s,e){const a=[];let d=new Date(s+'T00:00:00');const en=new Date(e+'T00:00:00');while(d<en){a.push(d.toISOString().split('T')[0]);d.setDate(d.getDate()+1);}return a;}
+function isAvailable(r,ci,co){return !dateRange(ci,co).some(d=>(r.blockedDates||[]).includes(d));}
+function nights(ci,co){return Math.max(0,Math.round((new Date(co)-new Date(ci))/864e5));}
+function fmt(d){const[y,m,day]=d.split('-');return `${m}/${day}/${y}`;}
+function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+function fmtAvail(ci,co){return (t('availableForText')||'Available for {ci} to {co} · {n} nights').replace('{ci}',fmt(ci)).replace('{co}',fmt(co)).replace('{n}',nights(ci,co));}
+function getRoomI18n(u){return (u.i18n&&u.i18n[currentLang])||{};}
 
 function filterRooms(){
- const ci=document.getElementById('checkin').value, co=document.getElementById('checkout').value;
- if(!ci||!co||new Date(co)<=new Date(ci)){alert('Please select valid check-in and check-out dates.');return;}
- document.getElementById('dateText').textContent=`Available for ${fmt(ci)} to ${fmt(co)} · ${nights(ci,co)} nights`;
- renderRooms(config.rooms.filter(u=>isAvailable(u,ci,co)));
+  const ci=document.getElementById('checkin').value,co=document.getElementById('checkout').value;
+  if(!ci||!co||new Date(co)<=new Date(ci)){alert(t('alertInvalidDates'));return;}
+  document.getElementById('dateText').textContent=fmtAvail(ci,co);
+  renderRooms(config.rooms.filter(u=>isAvailable(u,ci,co)));
 }
 function renderRooms(list){
- const root=document.getElementById('rooms'), empty=document.getElementById('empty'); root.innerHTML='';
- empty.classList.toggle('show',list.length===0);
- list.forEach(u=>{
-  const card=document.createElement('div'); card.className='room';
-  card.innerHTML=`<div class="room-img" style="background-image:url('${u.image}')"><div class="room-status">Available</div></div><div class="room-body"><h3>${escapeHtml(u.name)}</h3><p class="desc">${escapeHtml(u.description)}</p><div class="meta">${(u.amenities||[]).map(a=>`<span class="pill">${escapeHtml(a)}</span>`).join('')}</div><div class="price">${config.currency}${u.price} <span>/ night</span></div><div class="actions"><button class="secondary" onclick="viewDetails('${u.id}')">View details</button><button class="whatsapp" onclick="bookWhatsApp('${u.id}')">Book via WhatsApp</button></div></div>`;
-  root.appendChild(card);
- });
+  const root=document.getElementById('rooms'),empty=document.getElementById('empty');
+  root.innerHTML='';empty.classList.toggle('show',list.length===0);
+  list.forEach(u=>{
+    const r=getRoomI18n(u);
+    const card=document.createElement('div');card.className='room';
+    card.innerHTML=`<div class="room-img" style="background-image:url('${u.image}')"><div class="room-status">${esc(t('statusAvailable'))}</div></div><div class="room-body"><h3>${esc(u.name)}</h3><p class="room-tagline">${esc(r.tagline||'')}</p><p class="desc">${esc(r.description||'')}</p><div class="meta">${(r.amenities||[]).map(a=>`<span class="pill">${esc(a)}</span>`).join('')}</div><div class="price">${config.currency}${u.price.toLocaleString()} <span>${esc(t('pricePerNight'))}</span></div><div class="actions"><button class="secondary" onclick="viewDetails('${u.id}')">${esc(t('btnViewDetails'))}</button><button class="whatsapp" onclick="bookWhatsApp('${u.id}')">${esc(t('btnBookWA'))}</button></div></div>`;
+    root.appendChild(card);
+  });
 }
-function makeMessage(u){
- const ci=document.getElementById('checkin').value, co=document.getElementById('checkout').value, g=document.getElementById('guests').value;
- return `Hi! I would like to book the ${u.name} at ${config.propertyName} from ${fmt(ci)} to ${fmt(co)} for ${g}. Is it available?`;
+function makeMsg(u){
+  const ci=document.getElementById('checkin').value,co=document.getElementById('checkout').value;
+  const g=document.getElementById('guests').selectedOptions[0].textContent;
+  return (t('waBookMessage')||'Hi! I would like to book {room} at {property} from {ci} to {co} for {guests}. Is it available?').replace('{room}',u.name).replace('{property}',config.propertyName).replace('{ci}',fmt(ci)).replace('{co}',fmt(co)).replace('{guests}',g);
 }
-function bookWhatsApp(id){const u=config.rooms.find(x=>x.id===id);window.open(`https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(makeMessage(u))}`,'_blank');}
-function generalWhatsApp(){window.open(`https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent('Hi! I would like to check availability for my dates.')}`,'_blank');}
-function viewDetails(id){const u=config.rooms.find(x=>x.id===id);document.getElementById('modalImg').style.backgroundImage=`url('${u.image}')`;document.getElementById('modalTitle').textContent=u.name;document.getElementById('modalDesc').textContent=u.description;document.getElementById('modalMeta').innerHTML=(u.amenities||[]).map(a=>`<span class="pill">${escapeHtml(a)}</span>`).join('');document.getElementById('modalBtn').onclick=()=>bookWhatsApp(id);document.getElementById('modal').classList.add('show');}
+function bookWhatsApp(id){const u=config.rooms.find(x=>x.id===id);window.open(`https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(makeMsg(u))}`,'_blank');}
+function generalWhatsApp(){window.open(`https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(t('waGeneralMessage'))}`,'_blank');}
+function viewDetails(id){
+  const u=config.rooms.find(x=>x.id===id);const r=getRoomI18n(u);
+  document.getElementById('modalImg').style.backgroundImage=`url('${u.image}')`;
+  document.getElementById('modalTitle').textContent=u.name;
+  document.getElementById('modalDesc').textContent=r.description||'';
+  document.getElementById('modalMeta').innerHTML=(r.amenities||[]).map(a=>`<span class="pill">${esc(a)}</span>`).join('');
+  document.getElementById('modalBtn').onclick=()=>bookWhatsApp(id);
+  document.getElementById('modal').classList.add('show');
+}
 function closeModal(){document.getElementById('modal').classList.remove('show');}
 
-applyBrand(); renderRooms(config.rooms);
+document.querySelectorAll('.lang-btn').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.lang)));
+setLanguage(currentLang);
 </script>
 </body>
 </html>
