@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa del Bosque Tayrona — Reserva Directa</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --moss:    #3a4a35;
+  --moss-dk: #2a3726;
+  --gold:    #b8963e;
+  --cream:   #f7f3ec;
+  --fog:     #e4ddd3;
+  --bark:    #2b1f14;
+  --sand:    #c9bfaf;
+  --white:   #ffffff;
+  --red:     #c0392b;
+  --green:   #1a5c35;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--bark);
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  background: var(--moss-dk);
+  padding: 0 32px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  min-height: 72px;
+}
+.header-left { display: flex; flex-direction: column; justify-content: center; padding: 16px 0; }
+.eyebrow { font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.lodge-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem,3vw,1.7rem); font-weight: 300; color: var(--cream); letter-spacing: 0.03em; }
+.header-right { display: flex; align-items: center; gap: 18px; }
+.lang-toggle { display: flex; gap: 4px; }
+.lang-btn {
+  background: none; border: 1px solid rgba(247,243,236,0.25);
+  color: rgba(247,243,236,0.55); font-family: 'Jost',sans-serif;
+  font-size: 0.7rem; letter-spacing: 0.08em; padding: 5px 11px;
+  cursor: pointer; border-radius: 2px; transition: all 0.2s;
+}
+.lang-btn.active { background: var(--gold); border-color: var(--gold); color: var(--moss-dk); font-weight: 600; }
+.secure-tag { display: flex; align-items: center; gap: 5px; font-size: 0.65rem; letter-spacing: 0.07em; text-transform: uppercase; color: rgba(247,243,236,0.35); }
+
+/* BANNER */
+.direct-banner {
+  background: linear-gradient(135deg, var(--green) 0%, #2d7a50 100%);
+  color: #fff; text-align: center; padding: 12px 24px;
+  font-size: 0.83rem; letter-spacing: 0.03em;
+  display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+}
+.direct-banner strong { font-weight: 700; font-size: 1rem; }
+.pill { background: rgba(255,255,255,0.2); border-radius: 20px; padding: 3px 12px; font-size: 0.76rem; font-weight: 500; }
+
+/* LAYOUT */
+.wrap {
+  max-width: 1020px; margin: 0 auto;
+  padding: 44px 24px 72px;
+  display: grid; grid-template-columns: 1fr 400px; gap: 40px; align-items: start;
+}
+@media(max-width:760px){ .wrap{ grid-template-columns:1fr; gap:24px; padding:28px 16px 56px; } header{ padding:0 16px; } }
+
+/* SECTION TITLES */
+.col-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+  font-weight: 400; color: var(--moss); margin-bottom: 20px;
+}
+
+/* PRICE COMPARE */
+.price-compare {
+  background: var(--white); border: 1px solid var(--fog);
+  border-left: 4px solid var(--gold); padding: 18px 22px;
+  margin-bottom: 24px; display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 14px;
+}
+.pc { text-align: center; }
+.pc-lbl { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sand); margin-bottom: 5px; }
+.pc-amt { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; line-height: 1; }
+.pc-amt.cross { text-decoration: line-through; color: var(--sand); font-size: 1.2rem; }
+.pc-amt.direct { color: var(--green); }
+.pc-sub { font-size: 0.72rem; color: var(--sand); margin-top: 2px; }
+.arrow { font-size: 1.3rem; color: var(--fog); }
+.save-badge { background: var(--green); color: #fff; font-size: 0.78rem; font-weight: 600; padding: 8px 16px; border-radius: 3px; white-space: nowrap; }
+
+/* CARD / BLOCK */
+.block { background: var(--white); border: 1px solid var(--fog); padding: 22px; margin-bottom: 22px; }
+.block-title { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sand); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--fog); }
+
+/* FORM FIELDS */
+.field { margin-bottom: 13px; }
+.field label { display: block; font-size: 0.7rem; letter-spacing: 0.07em; text-transform: uppercase; color: #8a7a6a; margin-bottom: 5px; }
+.field input, .field select {
+  width: 100%; padding: 10px 13px; font-family: 'Jost',sans-serif; font-size: 0.9rem;
+  color: var(--bark); border: 1px solid var(--fog); background: var(--cream);
+  border-radius: 2px; outline: none; transition: border-color 0.2s, background 0.2s;
+}
+.field input:focus, .field select:focus { border-color: var(--moss); background: var(--white); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* CALENDAR */
+.cal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.cal-month { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 400; color: var(--moss); }
+.ical-badge { font-size: 0.68rem; color: var(--sand); display: flex; align-items: center; gap: 4px; }
+.ical-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--fog); }
+.ical-dot.on { background: #27ae60; }
+.cal-nav { display: flex; gap: 8px; }
+.cal-nav button {
+  background: none; border: 1px solid var(--fog); width: 28px; height: 28px;
+  border-radius: 2px; cursor: pointer; color: var(--moss); font-size: 0.95rem;
+  display: flex; align-items: center; justify-content: center; transition: background 0.15s;
+}
+.cal-nav button:hover { background: var(--fog); }
+.cal-days-hdr { display: grid; grid-template-columns: repeat(7,1fr); text-align: center; font-size: 0.65rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--sand); margin-bottom: 6px; }
+.cal-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 3px; }
+.day {
+  aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+  font-size: 0.78rem; cursor: pointer; border-radius: 2px;
+  border: 1px solid transparent; transition: all 0.12s; user-select: none;
+}
+.day:hover:not(.blocked):not(.past):not(.empty) { background: var(--fog); }
+.day.past { color: var(--fog); cursor: default; }
+.day.blocked { background: #fdf0ee; color: #e0b0aa; cursor: not-allowed; font-size: 0.7rem; }
+.day.sel-in { background: var(--moss); color: var(--cream); border-color: var(--moss); }
+.day.sel-out { background: var(--gold); color: #fff; border-color: var(--gold); }
+.day.in-range { background: rgba(58,74,53,0.1); }
+.day.empty { cursor: default; }
+.cal-legend { display: flex; gap: 14px; margin-top: 10px; flex-wrap: wrap; }
+.leg { display: flex; align-items: center; gap: 4px; font-size: 0.67rem; color: var(--sand); }
+.leg-dot { width: 9px; height: 9px; border-radius: 2px; }
+
+/* ICAL */
+.ical-block {
+  background: #f0f5f0; border: 1px solid #c5d8c5; border-left: 4px solid var(--moss);
+  padding: 15px 17px; margin-bottom: 22px; font-size: 0.8rem; line-height: 1.7; color: var(--moss);
+}
+.ical-block strong { display: block; margin-bottom: 5px; }
+.ical-block ol { padding-left: 16px; margin-bottom: 10px; }
+.ical-block input {
+  width: 100%; padding: 9px 12px; border: 1px solid #c5d8c5;
+  background: var(--white); border-radius: 2px; font-family: 'Jost',sans-serif;
+  font-size: 0.78rem; margin-bottom: 8px; outline: none;
+}
+.ical-block input:focus { border-color: var(--moss); }
+.ical-btn {
+  padding: 7px 16px; background: var(--moss); color: var(--cream);
+  border: none; border-radius: 2px; font-family: 'Jost',sans-serif;
+  font-size: 0.76rem; letter-spacing: 0.06em; cursor: pointer;
+}
+
+/* RIGHT / SUMMARY */
+.right-col { position: sticky; top: 24px; }
+.summary-row { display: flex; justify-content: space-between; align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--fog); font-size: 0.86rem; }
+.summary-row:last-child { border-bottom: none; }
+.summary-row .lbl { color: #8a7a6a; }
+.summary-row .val { font-weight: 500; }
+.summary-row.disc .val { color: var(--green); font-weight: 600; }
+.summary-row.tot { padding-top: 14px; }
+.summary-row.tot .lbl { font-weight: 600; font-size: 0.93rem; color: var(--bark); }
+.summary-row.tot .val { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 600; color: var(--moss); }
+
+/* SELECTED DATES DISPLAY */
+.dates-display {
+  background: var(--cream); border: 1px solid var(--fog); border-radius: 2px;
+  padding: 10px 14px; margin-bottom: 14px; font-size: 0.83rem; color: #8a7a6a;
+  display: flex; align-items: center; gap: 8px;
+}
+.dates-display span { color: var(--bark); font-weight: 500; }
+
+/* PAY BUTTON */
+.pay-btn {
+  display: block; width: 100%; padding: 16px; background: var(--moss); color: var(--cream);
+  font-family: 'Jost',sans-serif; font-size: 0.88rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; border: none;
+  cursor: pointer; border-radius: 2px; text-align: center;
+  transition: background 0.2s, opacity 0.2s; text-decoration: none;
+  margin-top: 6px;
+}
+.pay-btn:hover:not(.disabled) { background: var(--moss-dk); }
+.pay-btn.disabled { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
+
+.stripe-lock { text-align: center; margin-top: 11px; font-size: 0.68rem; color: var(--sand); letter-spacing: 0.05em; display: flex; align-items: center; justify-content: center; gap: 5px; }
+
+/* WHAT'S INCLUDED */
+.includes { list-style: none; margin-top: 4px; }
+.includes li { font-size: 0.82rem; color: #6b5e4e; padding: 5px 0; border-bottom: 1px solid var(--fog); display: flex; align-items: center; gap: 8px; }
+.includes li:last-child { border-bottom: none; }
+.includes li::before { content: '✓'; color: var(--green); font-weight: 700; font-size: 0.78rem; flex-shrink: 0; }
+
+/* ERROR */
+.err-msg { color: var(--red); font-size: 0.79rem; min-height: 18px; margin-top: 6px; }
+
+/* SUCCESS */
+#success { display: none; text-align: center; padding: 70px 24px; grid-column: 1/-1; }
+.success-icon { width: 68px; height: 68px; background: var(--moss); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
+#success h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--moss); margin-bottom: 12px; }
+#success p { color: #8a7a6a; font-size: 0.93rem; line-height: 1.8; max-width: 420px; margin: 0 auto; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <div class="eyebrow" data-t="eyebrow">Tayrona · Colombia · Selva Privada</div>
+    <div class="lodge-name">Casa del Bosque Tayrona</div>
+  </div>
+  <div class="header-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
+      <button class="lang-btn" onclick="setLang('es')" id="btn-es">ES</button>
+    </div>
+    <div class="secure-tag">
+      <svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M5 1C3.3 1 2 2.3 2 4v1H1v6h8V5H8V4C8 2.3 6.7 1 5 1z" fill="currentColor" opacity=".5"/></svg>
+      <span data-t="secure">Secure</span>
+    </div>
+  </div>
+</header>
+
+<div class="direct-banner">
+  <span data-t="b1">Book directly and save</span>
+  <strong>10% OFF</strong>
+  <span class="pill" data-t="b2">vs. Booking.com</span>
+  <span data-t="b3">· Breakfast included · No hidden fees</span>
+</div>
+
+<div class="wrap" id="wrap">
+
+  <!-- LEFT -->
+  <div id="left">
+
+    <div class="col-title" data-t="h-stay">Your Stay</div>
+
+    <!-- PRICE COMPARE -->
+    <div class="price-compare">
+      <div class="pc">
+        <div class="pc-lbl">Booking.com</div>
+        <div class="pc-amt cross">COP 270.000</div>
+        <div class="pc-sub" data-t="pn">per night</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="pc">
+        <div class="pc-lbl" data-t="direct-lbl">Direct Price</div>
+        <div class="pc-amt direct">COP 243.000</div>
+        <div class="pc-sub" data-t="pn2">per night</div>
+      </div>
+      <div class="save-badge" data-t="save-badge">You save COP 27.000/night</div>
+    </div>
+
+    <!-- GUEST INFO -->
+    <div class="block">
+      <div class="block-title" data-t="guest-t">Guest Information</div>
+      <div class="two-col">
+        <div class="field"><label data-t="fn">First Name</label><input type="text" id="fname" placeholder="María"></div>
+        <div class="field"><label data-t="ln">Last Name</label><input type="text" id="lname" placeholder="García"></div>
+      </div>
+      <div class="field"><label data-t="em">Email</label><input type="email" id="email" placeholder="maria@correo.com"></div>
+      <div class="field"><label data-t="ph">WhatsApp / Phone</label><input type="tel" id="phone" placeholder="+57 300 000 0000"></div>
+      <div class="field">
+        <label data-t="gu">Guests</label>
+        <select id="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option></select>
+      </div>
+      <div class="field"><label data-t="rq">Special Requests (optional)</label><input type="text" id="requests" placeholder="Dietary needs, arrival time…"></div>
+      <div class="err-msg" id="form-err"></div>
+    </div>
+
+    <!-- CALENDAR -->
+    <div class="block">
+      <div class="cal-header">
+        <div class="cal-month" id="cal-month"></div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="ical-badge"><div class="ical-dot" id="ical-dot"></div><span id="ical-status" data-t="ical-ns">iCal not synced</span></div>
+          <div class="cal-nav">
+            <button onclick="prevM()">‹</button>
+            <button onclick="nextM()">›</button>
+          </div>
+        </div>
+      </div>
+      <div class="cal-days-hdr" id="cal-hdr"></div>
+      <div class="cal-grid" id="cal-grid"></div>
+      <div class="cal-legend">
+        <div class="leg"><div class="leg-dot" style="background:var(--moss)"></div><span data-t="l1">Check-in</span></div>
+        <div class="leg"><div class="leg-dot" style="background:var(--gold)"></div><span data-t="l2">Check-out</span></div>
+        <div class="leg"><div class="leg-dot" style="background:rgba(58,74,53,0.1);border:1px solid var(--fog)"></div><span data-t="l3">Selected</span></div>
+        <div class="leg"><div class="leg-dot" style="background:#fdf0ee"></div><span data-t="l4">Unavailable</span></div>
+      </div>
+    </div>
+
+    <!-- ICAL -->
+    <div class="ical-block">
+      <strong>📅 <span data-t="ical-t">Connect Booking.com calendar — prevents double bookings</span></strong>
+      <ol>
+        <li data-t="ical-s1">Booking.com → Property → Rates & Availability → Sync calendars → copy iCal URL</li>
+        <li data-t="ical-s2">Paste below — blocked dates appear automatically on the calendar above</li>
+      </ol>
+      <input type="url" id="ical-url" placeholder="https://admin.booking.com/hotel/hoteladmin/ical.ics?...">
+      <button class="ical-btn" onclick="loadICal()" data-t="ical-btn">Load Calendar</button>
+    </div>
+
+  </div><!-- /left -->
+
+  <!-- RIGHT -->
+  <div class="right-col" id="right">
+
+    <div class="col-title" data-t="h-pay">Payment</div>
+
+    <!-- SUMMARY -->
+    <div class="block" style="border-top:3px solid var(--moss);">
+      <div class="block-title" data-t="sum-t">Booking Summary</div>
+
+      <div class="dates-display" id="dates-display">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span id="dates-text" data-t="pick-dates">Select check-in and check-out dates</span>
+      </div>
+
+      <div class="summary-row">
+        <span class="lbl" data-t="s-room">Room · King Sea View</span>
+        <span class="val">COP 270.000</span>
+      </div>
+      <div class="summary-row disc">
+        <span class="lbl" data-t="s-disc">Direct discount (10%)</span>
+        <span class="val" id="s-disc-val">− COP 27.000</span>
+      </div>
+      <div class="summary-row">
+        <span class="lbl" data-t="s-nights">Nights</span>
+        <span class="val" id="s-nights">—</span>
+      </div>
+      <div class="summary-row">
+        <span class="lbl" data-t="s-bfast">Breakfast</span>
+        <span class="val" data-t="s-incl">Included ✓</span>
+      </div>
+      <div class="summary-row tot">
+        <span class="lbl" data-t="s-tot">Total</span>
+        <span class="val" id="s-tot">—</span>
+      </div>
+    </div>
+
+    <!-- WHAT'S INCLUDED -->
+    <div class="block">
+      <div class="block-title" data-t="inc-t">What's Included</div>
+      <ul class="includes">
+        <li data-t="i1">Breakfast for 2 each morning</li>
+        <li data-t="i2">Private jungle — 4 hectares</li>
+        <li data-t="i3">950m walk to the beach</li>
+        <li data-t="i4">King bed · sea & mountain views</li>
+        <li data-t="i5">Free cancellation up to 72h before</li>
+      </ul>
+    </div>
+
+    <!-- PAY BUTTON -->
+    <a href="#" id="pay-btn" class="pay-btn disabled" onclick="handlePay(event)">
+      <span id="pay-btn-txt" data-t="pay-txt">Select dates to continue</span>
+    </a>
+    <div class="stripe-lock">
+      <svg width="9" height="11" viewBox="0 0 10 12" fill="none"><path d="M5 1C3.3 1 2 2.3 2 4v1H1v6h8V5H8V4C8 2.3 6.7 1 5 1z" fill="currentColor"/></svg>
+      <span data-t="stripe-n">Secured by Stripe · SSL encrypted</span>
+    </div>
+
+  </div>
+
+  <!-- SUCCESS (hidden) -->
+  <div id="success">
+    <div class="success-icon">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+        <path d="M5 13l4 4L19 7" stroke="#f7f3ec" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2 id="suc-title" data-t="suc-h">Redirecting to payment…</h2>
+    <p id="suc-body"></p>
+  </div>
+
+</div><!-- /wrap -->
+
+<script>
+// ══════════════════════════════
+// STRIPE PAYMENT LINK
+// ══════════════════════════════
+const STRIPE_LINK = 'https://buy.stripe.com/test_00w5kCbABb5dgrOgUKbwk00';
+const RATE        = 270000;   // Booking.com rate COP
+const DIRECT      = 243000;   // 10% off
+const DISC_NIGHT  = 27000;
+
+// ══════════════════════════════
+// CALENDAR
+// ══════════════════════════════
+let cy = new Date().getFullYear(), cm = new Date().getMonth();
+let selIn = null, selOut = null, picking = 'in';
+let blocked = new Set();
+
+const MEN = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const MES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const DEN = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+const DES = ['Do','Lu','Ma','Mi','Ju','Vi','Sá'];
+
+function dk(y,m,d){ return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`; }
+function pd(k){ const p=k.split('-'); return new Date(+p[0],+p[1]-1,+p[2]); }
+
+function renderCal(){
+  const lang = document.documentElement.lang||'en';
+  const M = lang==='es'?MES:MEN, D = lang==='es'?DES:DEN;
+  document.getElementById('cal-month').textContent = `${M[cm]} ${cy}`;
+  document.getElementById('cal-hdr').innerHTML = D.map(d=>`<div>${d}</div>`).join('');
+  const grid = document.getElementById('cal-grid'); grid.innerHTML='';
+  const today = new Date(); today.setHours(0,0,0,0);
+  const first = new Date(cy,cm,1).getDay();
+  const dim   = new Date(cy,cm+1,0).getDate();
+  for(let i=0;i<first;i++){ const el=document.createElement('div'); el.className='day empty'; grid.appendChild(el); }
+  for(let d=1;d<=dim;d++){
+    const el=document.createElement('div');
+    const key=dk(cy,cm,d), dt=new Date(cy,cm,d);
+    let c='day';
+    if(dt<today) c+=' past';
+    else if(blocked.has(key)) c+=' blocked';
+    else{
+      if(selIn&&key===selIn) c+=' sel-in';
+      else if(selOut&&key===selOut) c+=' sel-out';
+      else if(selIn&&selOut){ const di=pd(selIn),dout=pd(selOut); if(dt>di&&dt<dout) c+=' in-range'; }
+    }
+    el.className=c; el.textContent=d;
+    el.onclick=()=>pick(key, dt<today||blocked.has(key));
+    grid.appendChild(el);
+  }
+}
+
+function pick(key, bad){
+  if(bad) return;
+  if(picking==='in'){ selIn=key; selOut=null; picking='out'; }
+  else{
+    if(key<=selIn){ selIn=key; selOut=null; picking='out'; renderCal(); updateSum(); return; }
+    const di=pd(selIn),dout=pd(key);
+    let hasB=false;
+    for(const bk of blocked){ const bd=pd(bk); if(bd>di&&bd<dout){hasB=true;break;} }
+    if(hasB){ document.getElementById('form-err').textContent=document.documentElement.lang==='es'?'Hay fechas no disponibles en ese rango.':'Some dates in that range are unavailable.'; return; }
+    selOut=key; picking='in';
+    document.getElementById('form-err').textContent='';
+  }
+  renderCal(); updateSum();
+}
+function prevM(){ cm--; if(cm<0){cm=11;cy--;} renderCal(); }
+function nextM(){ cm++; if(cm>11){cm=0;cy++;} renderCal(); }
+
+// ══════════════════════════════
+// ICAL
+// ══════════════════════════════
+async function loadICal(){
+  const url = document.getElementById('ical-url').value.trim();
+  if(!url) return;
+  const st=document.getElementById('ical-status'), dot=document.getElementById('ical-dot');
+  const lang=document.documentElement.lang||'en';
+  st.textContent=lang==='es'?'Cargando…':'Loading…';
+  try{
+    const r=await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`);
+    const d=await r.json(); parseICal(d.contents);
+    dot.classList.add('on');
+    st.textContent=lang==='es'?'Calendario sincronizado ✓':'Calendar synced ✓';
+    renderCal();
+  }catch(e){ st.textContent=lang==='es'?'Error al cargar':'Load failed'; }
+}
+function parseICal(txt){
+  blocked=new Set();
+  const evs=txt.split('BEGIN:VEVENT'); evs.shift();
+  for(const ev of evs){
+    const ds=ev.match(/DTSTART[^:]*:(\d{8})/)?.[1], de=ev.match(/DTEND[^:]*:(\d{8})/)?.[1];
+    if(!ds||!de) continue;
+    const s=picd(ds), e=picd(de);
+    for(let d=new Date(s);d<e;d.setDate(d.getDate()+1))
+      blocked.add(dk(d.getFullYear(),d.getMonth(),d.getDate()));
+  }
+}
+function picd(s){ return new Date(+s.slice(0,4),+s.slice(4,6)-1,+s.slice(6,8)); }
+
+// ══════════════════════════════
+// SUMMARY
+// ══════════════════════════════
+function fmtCOP(n){ return 'COP '+n.toLocaleString('es-CO'); }
+function nights(){ return selIn&&selOut?Math.round((pd(selOut)-pd(selIn))/86400000):null; }
+
+function formatDateNice(key){
+  const d=pd(key), lang=document.documentElement.lang||'en';
+  return d.toLocaleDateString(lang==='es'?'es-CO':'en-US',{day:'numeric',month:'short'});
+}
+
+function updateSum(){
+  const lang=document.documentElement.lang||'en';
+  const n=nights();
+  const btn=document.getElementById('pay-btn');
+  const btntxt=document.getElementById('pay-btn-txt');
+
+  // dates display
+  const dtxt=document.getElementById('dates-text');
+  if(selIn&&selOut) dtxt.textContent=`${formatDateNice(selIn)} → ${formatDateNice(selOut)}`;
+  else if(selIn) dtxt.textContent=lang==='es'?`Entrada: ${formatDateNice(selIn)} — selecciona salida`:`Check-in: ${formatDateNice(selIn)} — pick check-out`;
+  else dtxt.textContent=T[lang]['pick-dates'];
+
+  document.getElementById('s-nights').textContent=n?n:'—';
+  const tot=n?DIRECT*n:null;
+  document.getElementById('s-tot').textContent=tot?fmtCOP(tot):'—';
+  document.getElementById('s-disc-val').textContent=n?`− ${fmtCOP(DISC_NIGHT*n)}`:`− ${fmtCOP(DISC_NIGHT)}`;
+
+  if(n){
+    btntxt.textContent=lang==='es'?`Pagar ${fmtCOP(tot)}`:`Pay ${fmtCOP(tot)}`;
+    btn.classList.remove('disabled');
+  } else {
+    btntxt.textContent=T[lang]['pay-txt'];
+    btn.classList.add('disabled');
+  }
+}
+
+// ══════════════════════════════
+// PAY HANDLER
+// ══════════════════════════════
+function handlePay(e){
+  e.preventDefault();
+  const lang=document.documentElement.lang||'en';
+  const fname=document.getElementById('fname').value.trim();
+  const lname=document.getElementById('lname').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const errEl=document.getElementById('form-err');
+  const n=nights();
+
+  if(!fname||!lname){ errEl.textContent=lang==='es'?'Por favor ingresa tu nombre completo.':'Please enter your full name.'; return; }
+  if(!email||!email.includes('@')){ errEl.textContent=lang==='es'?'Por favor ingresa un correo válido.':'Please enter a valid email.'; return; }
+  if(!n){ errEl.textContent=lang==='es'?'Selecciona fechas de entrada y salida.':'Please select check-in and check-out dates.'; return; }
+  errEl.textContent='';
+
+  const tot=DIRECT*n;
+  // Build Stripe URL with prefilled amount and metadata via query params
+  // Stripe Payment Links support ?prefilled_email and custom field params
+  const checkinFmt=formatDateNice(selIn), checkoutFmt=formatDateNice(selOut);
+  const stripeURL=`${STRIPE_LINK}?prefilled_email=${encodeURIComponent(email)}&prefilled_amount=${tot}&client_reference_id=${encodeURIComponent(fname+' '+lname)}&locale=${lang==='es'?'es':'en'}`;
+
+  // Show brief confirmation then redirect
+  document.getElementById('left').style.display='none';
+  document.getElementById('right').style.display='none';
+  const suc=document.getElementById('success');
+  suc.style.display='block';
+  document.getElementById('suc-title').textContent=lang==='es'?'Redirigiendo a pago seguro…':'Redirecting to secure payment…';
+  document.getElementById('suc-body').textContent=lang==='es'
+    ?`${fname}, tu reserva del ${checkinFmt} al ${checkoutFmt} (${n} noches) por ${fmtCOP(tot)} está lista. Stripe procesará tu pago de forma segura.`
+    :`${fname}, your stay from ${checkinFmt} to ${checkoutFmt} (${n} nights) for ${fmtCOP(tot)} is ready. Stripe will process your payment securely.`;
+
+  setTimeout(()=>{ window.location.href = stripeURL; }, 2000);
+}
+
+// ══════════════════════════════
+// TRANSLATIONS
+// ══════════════════════════════
+const T = {
+  en:{
+    eyebrow:'Tayrona · Colombia · Private Jungle', secure:'Secure',
+    b1:'Book directly and save', b2:'vs. Booking.com', b3:'· Breakfast included · No hidden fees',
+    'h-stay':'Your Stay', pn:'per night', pn2:'per night',
+    'direct-lbl':'Direct Price', 'save-badge':'You save COP 27.000/night',
+    'guest-t':'Guest Information', fn:'First Name', ln:'Last Name',
+    em:'Email', ph:'WhatsApp / Phone', gu:'Guests', rq:'Special Requests (optional)',
+    'ical-ns':'iCal not synced', 'ical-t':'Connect Booking.com calendar — prevents double bookings',
+    'ical-s1':'Booking.com → Property → Rates & Availability → Sync calendars → copy iCal URL',
+    'ical-s2':'Paste below — blocked dates appear automatically on the calendar above',
+    'ical-btn':'Load Calendar',
+    l1:'Check-in', l2:'Check-out', l3:'Selected', l4:'Unavailable',
+    'h-pay':'Payment', 'sum-t':'Booking Summary', 'pick-dates':'Select check-in and check-out dates',
+    's-room':'Room · King Sea View', 's-disc':'Direct discount (10%)',
+    's-nights':'Nights', 's-bfast':'Breakfast', 's-incl':'Included ✓', 's-tot':'Total',
+    'inc-t':"What's Included",
+    i1:'Breakfast for 2 each morning', i2:'Private jungle — 4 hectares',
+    i3:'950m walk to the beach', i4:'King bed · sea & mountain views',
+    i5:'Free cancellation up to 72h before',
+    'pay-txt':'Select dates to continue', 'stripe-n':'Secured by Stripe · SSL encrypted',
+    'suc-h':'Redirecting to secure payment…',
+  },
+  es:{
+    eyebrow:'Tayrona · Colombia · Selva Privada', secure:'Seguro',
+    b1:'Reserva directo y ahorra', b2:'vs. Booking.com', b3:'· Desayuno incluido · Sin cargos ocultos',
+    'h-stay':'Tu Estadía', pn:'por noche', pn2:'por noche',
+    'direct-lbl':'Precio Directo', 'save-badge':'Ahorras COP 27.000/noche',
+    'guest-t':'Información del Huésped', fn:'Nombre', ln:'Apellido',
+    em:'Correo Electrónico', ph:'WhatsApp / Teléfono', gu:'Huéspedes', rq:'Solicitudes Especiales (opcional)',
+    'ical-ns':'iCal no sincronizado', 'ical-t':'Conecta el calendario de Booking.com — evita dobles reservas',
+    'ical-s1':'Booking.com → Alojamiento → Tarifas y disponibilidad → Sincronizar calendarios → copiar URL iCal',
+    'ical-s2':'Pégala abajo — las fechas bloqueadas aparecen automáticamente en el calendario',
+    'ical-btn':'Cargar Calendario',
+    l1:'Entrada', l2:'Salida', l3:'Seleccionado', l4:'No disponible',
+    'h-pay':'Pago', 'sum-t':'Resumen de Reserva', 'pick-dates':'Selecciona fechas de entrada y salida',
+    's-room':'Habitación · King Vista al Mar', 's-disc':'Descuento directo (10%)',
+    's-nights':'Noches', 's-bfast':'Desayuno', 's-incl':'Incluido ✓', 's-tot':'Total',
+    'inc-t':'Qué Incluye',
+    i1:'Desayuno para 2 cada mañana', i2:'Selva privada — 4 hectáreas',
+    i3:'950m caminando a la playa', i4:'Cama King · vistas al mar y la montaña',
+    i5:'Cancelación gratuita hasta 72h antes',
+    'pay-txt':'Selecciona fechas para continuar', 'stripe-n':'Pagos seguros con Stripe · Cifrado SSL',
+    'suc-h':'Redirigiendo a pago seguro…',
+  }
+};
+
+function setLang(lang){
+  document.documentElement.lang=lang;
+  document.getElementById('btn-en').classList.toggle('active',lang==='en');
+  document.getElementById('btn-es').classList.toggle('active',lang==='es');
+  for(const[k,v] of Object.entries(T[lang])){
+    document.querySelectorAll(`[data-t="${k}"]`).forEach(el=>{
+      if(el.tagName==='INPUT') el.placeholder=v; else el.textContent=v;
+    });
+  }
+  renderCal(); updateSum();
+}
+
+// INIT
+renderCal(); updateSum();
+</script>
+</body>
+</html>
