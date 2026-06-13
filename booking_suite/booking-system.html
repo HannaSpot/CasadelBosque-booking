@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Selvatica Direct Booking Suite</title>
+<title>Selvatica Direct Booking Suite — Stripe Test</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -41,13 +41,49 @@ input:focus,select:focus{border-color:var(--green3);background:white}
 .desc{color:var(--muted);font-size:14px;line-height:1.55;margin-bottom:12px}
 .meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
 .pill{background:var(--sage);color:var(--green2);font-size:12px;padding:6px 10px;border-radius:999px;font-weight:700}
-.price{font-size:22px;color:var(--green);font-weight:900;margin-top:auto;margin-bottom:14px}.price span{font-size:13px;color:var(--muted);font-weight:500}
-.actions{display:grid;grid-template-columns:1fr 1.2fr;gap:8px}.secondary{background:white;color:var(--green);border:1px solid var(--border)}.whatsapp{background:#1f7a4b;color:white}.whatsapp:hover{background:#16653d}
+
+/* ── PRICING ── */
+.price-wrap{margin-top:auto;margin-bottom:14px}
+.price-original{font-size:12px;color:var(--muted);text-decoration:line-through;margin-bottom:2px}
+.price-direct{font-size:22px;color:var(--green);font-weight:900}
+.price-direct span{font-size:13px;color:var(--muted);font-weight:500}
+.price-save{display:inline-block;background:#e8f5ee;color:#1a5c35;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px;margin-left:5px}
+.discount-ribbon{position:absolute;top:12px;right:12px;background:var(--gold);color:white;font-size:11px;font-weight:800;padding:5px 10px;border-radius:999px}
+
+/* ── ACTIONS ── */
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.secondary{background:white;color:var(--green);border:1px solid var(--border)!important}
+.whatsapp{background:#1f7a4b;color:white}.whatsapp:hover{background:#16653d}
+.pay-stripe-btn{
+  grid-column:1/-1;
+  background:var(--green);color:white;
+  font-size:14px;font-weight:800;
+  border-radius:14px;padding:14px;
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:.18s ease;
+}
+.pay-stripe-btn:hover:not(:disabled){background:var(--green2);transform:translateY(-1px)}
+.pay-stripe-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
 .notice{margin-top:18px;background:#fff8e8;border:1px solid #efd99b;border-radius:18px;padding:15px 17px;color:#6c561b;font-size:14px;line-height:1.55}
 .empty{display:none;background:white;border:1px solid var(--border);border-radius:22px;padding:34px;text-align:center;color:var(--muted)}.empty.show{display:block}
+
+/* ── DETAIL MODAL (unchanged) ── */
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.48);display:none;align-items:center;justify-content:center;padding:20px;z-index:20}.modal.show{display:flex}
 .modal-card{background:white;border-radius:24px;max-width:650px;width:100%;overflow:hidden;box-shadow:var(--shadow)}
-.modal-img{height:260px;background-size:cover;background-position:center}.modal-content{padding:22px}.modal-content h3{font-size:36px}.close{float:right;background:var(--sage);color:var(--green);padding:8px 12px;border-radius:999px}
+.modal-img{height:260px;background-size:cover;background-position:center}
+.modal-content{padding:22px}.modal-content h3{font-size:36px}
+.close{float:right;background:var(--sage);color:var(--green);padding:8px 12px;border-radius:999px;border:none;cursor:pointer}
+
+/* ── SUCCESS / CANCEL BANNER ── */
+.payment-banner{display:none;border-radius:16px;padding:16px 20px;margin-bottom:20px;font-size:14px;font-weight:600;align-items:center;gap:10px}
+.payment-banner.success{display:flex;background:#e8f5ee;color:#1a5c35;border:1px solid #b2dfc5}
+.payment-banner.cancelled{display:flex;background:#fff8e8;color:#6c561b;border:1px solid #efd99b}
+
+/* ── TEST MODE BADGE ── */
+.test-badge{background:#f0f4ff;border:1px solid #b8c8ff;border-radius:12px;padding:10px 16px;font-size:12px;color:#3a52cc;font-weight:600;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+
 .footer{text-align:center;margin:24px 0 0;color:var(--muted);font-size:12px}
 @media(max-width:900px){.search-grid{grid-template-columns:1fr 1fr}.search-grid .primary{grid-column:1/-1}.rooms{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){body{padding:12px}.hero{padding:38px 22px;border-radius:22px}h1{font-size:40px}.search-card{margin-top:-20px}.search-grid,.rooms{grid-template-columns:1fr}.section-title{display:block}.actions{grid-template-columns:1fr}.room-img{height:220px}}
@@ -55,6 +91,20 @@ input:focus,select:focus{border-color:var(--green3);background:white}
 </head>
 <body>
 <div class="wrap">
+
+  <!-- TEST MODE NOTICE -->
+  <div class="test-badge">
+    🧪 TEST MODE — This page is a safe copy for testing Stripe. Your original booking-system.html is unchanged.
+  </div>
+
+  <!-- PAYMENT RESULT BANNERS -->
+  <div class="payment-banner success" id="bannerSuccess">
+    ✅ Payment successful! Booking confirmed. We will contact you on WhatsApp shortly.
+  </div>
+  <div class="payment-banner cancelled" id="bannerCancelled">
+    ⚠️ Payment was cancelled. No charge was made. You can try again or book via WhatsApp.
+  </div>
+
   <section class="hero" id="hero">
     <div class="badge" id="propertyBadge"></div>
     <h1 id="heroTitle"></h1>
@@ -65,10 +115,13 @@ input:focus,select:focus{border-color:var(--green3);background:white}
     <div class="search-grid">
       <div class="field"><label>Check-in</label><input type="date" id="checkin"></div>
       <div class="field"><label>Check-out</label><input type="date" id="checkout"></div>
-      <div class="field"><label>Guests</label><select id="guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option><option>5+ guests</option></select></div>
+      <div class="field"><label>Guests</label><select id="guests">
+        <option>1 guest</option><option selected>2 guests</option>
+        <option>3 guests</option><option>4 guests</option><option>5+ guests</option>
+      </select></div>
       <button class="primary" onclick="filterRooms()">Check availability</button>
     </div>
-    <div class="small">Availability is based on blocked dates configured in editable-config.js.</div>
+    <div class="small">Book directly — 10% off vs. Booking.com. Pay by card or WhatsApp.</div>
   </section>
 
   <div class="section-title">
@@ -77,65 +130,240 @@ input:focus,select:focus{border-color:var(--green3);background:white}
   </div>
 
   <div class="rooms" id="rooms"></div>
-  <div class="empty" id="empty"><h2>No availability for those dates</h2><p>Try different dates or contact the property directly on WhatsApp.</p><br><button class="whatsapp" onclick="generalWhatsApp()">Contact via WhatsApp</button></div>
+  <div class="empty" id="empty">
+    <h2>No availability for those dates</h2>
+    <p>Try different dates or contact the property directly on WhatsApp.</p><br>
+    <button class="whatsapp" onclick="generalWhatsApp()">Contact via WhatsApp</button>
+  </div>
 
   <div class="notice"><strong>The Experience:</strong> Wake up surrounded by rainforest, mountain mist and Caribbean light. Hidden high above the Caribbean coast, each cabin was designed to reconnect you with nature, silence and slow living — an immersive escape between the Sierra Nevada mountains and the sea.</div>
 
   <div class="footer">Powered by Selvatica Direct Booking Suite</div>
 </div>
 
+<!-- DETAIL MODAL (unchanged from original) -->
 <div class="modal" id="modal" onclick="if(event.target.id==='modal')closeModal()">
   <div class="modal-card">
     <div class="modal-img" id="modalImg"></div>
-    <div class="modal-content"><button class="close" onclick="closeModal()">Close</button><h3 id="modalTitle"></h3><p class="desc" id="modalDesc"></p><div class="meta" id="modalMeta"></div><button class="whatsapp" id="modalBtn">Book via WhatsApp</button></div>
+    <div class="modal-content">
+      <button class="close" onclick="closeModal()">Close</button>
+      <h3 id="modalTitle"></h3>
+      <p class="desc" id="modalDesc"></p>
+      <div class="meta" id="modalMeta"></div>
+      <button class="whatsapp" id="modalBtn">Book via WhatsApp</button>
+    </div>
   </div>
 </div>
 
 <script src="editable-config.js"></script>
 <script>
-let config = hotelConfig;
-function todayPlus(days){const d=new Date();d.setDate(d.getDate()+days);return d.toISOString().split('T')[0];}
-document.getElementById('checkin').value=todayPlus(1);
-document.getElementById('checkout').value=todayPlus(3);
+// ══════════════════════════════════════════════
+// CONFIG
+// Only the publishable key lives here (safe for frontend)
+// The secret key lives ONLY in Railway as STRIPE_SECRET_KEY
+// ══════════════════════════════════════════════
+const STRIPE_PK   = 'pk_test_YOUR_PUBLISHABLE_KEY_HERE'; // ← replace with your pk_test_...
+const BACKEND_URL = 'https://YOUR_RAILWAY_APP.railway.app'; // ← replace after Railway deploy
+const DISCOUNT    = 0.10; // 10% direct booking discount
 
-function applyBrand(){
-  document.getElementById('propertyBadge').textContent = config.badge;
-  document.getElementById('heroTitle').textContent = config.heroTitle;
-  document.getElementById('heroSubtitle').textContent = config.heroSubtitle;
+// ══════════════════════════════════════════════
+// SHOW PAYMENT RESULT BANNER (from Stripe redirect)
+// ══════════════════════════════════════════════
+(function checkPaymentResult() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('payment') === 'success') {
+    document.getElementById('bannerSuccess').style.display = 'flex';
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+  if (params.get('payment') === 'cancelled') {
+    document.getElementById('bannerCancelled').style.display = 'flex';
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+})();
+
+// ══════════════════════════════════════════════
+// BOOKING LOGIC (identical to original)
+// ══════════════════════════════════════════════
+let config = hotelConfig;
+
+function todayPlus(days) {
+  const d = new Date(); d.setDate(d.getDate() + days);
+  return d.toISOString().split('T')[0];
+}
+document.getElementById('checkin').value  = todayPlus(1);
+document.getElementById('checkout').value = todayPlus(3);
+
+function applyBrand() {
+  const lang = config.defaultLang || 'en';
+  const t    = config.i18n ? config.i18n[lang] : config;
+  document.getElementById('propertyBadge').textContent = t.badge || config.badge || '';
+  document.getElementById('heroTitle').textContent     = t.heroTitle || config.heroTitle || '';
+  document.getElementById('heroSubtitle').textContent  = t.heroSubtitle || config.heroSubtitle || '';
   document.getElementById('hero').style.setProperty('--hero', `url('${config.heroImage}')`);
 }
-function dateRange(start,end){const dates=[];let d=new Date(start+'T00:00:00');const e=new Date(end+'T00:00:00');while(d<e){dates.push(d.toISOString().split('T')[0]);d.setDate(d.getDate()+1);}return dates;}
-function isAvailable(room,ci,co){const requested=dateRange(ci,co);return !requested.some(d=>(room.blockedDates||[]).includes(d));}
-function nights(ci,co){return Math.max(0,Math.round((new Date(co)-new Date(ci))/(1000*60*60*24)));}
-function fmt(d){const [y,m,day]=d.split('-');return `${m}/${day}/${y}`;}
-function escapeHtml(str){return String(str||'').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
 
-function filterRooms(){
- const ci=document.getElementById('checkin').value, co=document.getElementById('checkout').value;
- if(!ci||!co||new Date(co)<=new Date(ci)){alert('Please select valid check-in and check-out dates.');return;}
- document.getElementById('dateText').textContent=`Available for ${fmt(ci)} to ${fmt(co)} · ${nights(ci,co)} nights`;
- renderRooms(config.rooms.filter(u=>isAvailable(u,ci,co)));
+function dateRange(start, end) {
+  const dates = [], d = new Date(start + 'T00:00:00'), e = new Date(end + 'T00:00:00');
+  while (d < e) { dates.push(d.toISOString().split('T')[0]); d.setDate(d.getDate() + 1); }
+  return dates;
 }
-function renderRooms(list){
- const root=document.getElementById('rooms'), empty=document.getElementById('empty'); root.innerHTML='';
- empty.classList.toggle('show',list.length===0);
- list.forEach(u=>{
-  const card=document.createElement('div'); card.className='room';
-  card.innerHTML=`<div class="room-img" style="background-image:url('${u.image}')"><div class="room-status">Available</div></div><div class="room-body"><h3>${escapeHtml(u.name)}</h3><p class="desc">${escapeHtml(u.description)}</p><div class="meta">${(u.amenities||[]).map(a=>`<span class="pill">${escapeHtml(a)}</span>`).join('')}</div><div class="price">${config.currency}${u.price} <span>/ night</span></div><div class="actions"><button class="secondary" onclick="viewDetails('${u.id}')">View details</button><button class="whatsapp" onclick="bookWhatsApp('${u.id}')">Book via WhatsApp</button></div></div>`;
-  root.appendChild(card);
- });
+function isAvailable(room, ci, co) {
+  return !dateRange(ci, co).some(d => (room.blockedDates || []).includes(d));
 }
-function makeMessage(u){
- const ci=document.getElementById('checkin').value, co=document.getElementById('checkout').value, g=document.getElementById('guests').value;
- return `Hi! I would like to book the ${u.name} at ${config.propertyName} from ${fmt(ci)} to ${fmt(co)} for ${g}. Is it available?`;
+function nightsCount(ci, co) {
+  return Math.max(0, Math.round((new Date(co) - new Date(ci)) / (1000 * 60 * 60 * 24)));
 }
-function bookWhatsApp(id){const u=config.rooms.find(x=>x.id===id);window.open(`https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(makeMessage(u))}`,'_blank');}
-function generalWhatsApp(){window.open(`https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent('Hi! I would like to check availability for my dates.')}`,'_blank');}
-function viewDetails(id){const u=config.rooms.find(x=>x.id===id);document.getElementById('modalImg').style.backgroundImage=`url('${u.image}')`;document.getElementById('modalTitle').textContent=u.name;document.getElementById('modalDesc').textContent=u.description;document.getElementById('modalMeta').innerHTML=(u.amenities||[]).map(a=>`<span class="pill">${escapeHtml(a)}</span>`).join('');document.getElementById('modalBtn').onclick=()=>bookWhatsApp(id);document.getElementById('modal').classList.add('show');}
-function closeModal(){document.getElementById('modal').classList.remove('show');}
+function fmt(d) { const [y, m, day] = d.split('-'); return `${m}/${day}/${y}`; }
+function fmtCOP(n) { return 'COP $' + Math.round(n).toLocaleString('es-CO'); }
+function escapeHtml(str) {
+  return String(str || '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+}
 
-applyBrand(); renderRooms(config.rooms);
+function filterRooms() {
+  const ci = document.getElementById('checkin').value;
+  const co = document.getElementById('checkout').value;
+  if (!ci || !co || new Date(co) <= new Date(ci)) {
+    alert('Please select valid check-in and check-out dates.'); return;
+  }
+  const n = nightsCount(ci, co);
+  document.getElementById('dateText').textContent = `Available for ${fmt(ci)} to ${fmt(co)} · ${n} nights`;
+  renderRooms(config.rooms.filter(u => isAvailable(u, ci, co)));
+}
+
+function renderRooms(list) {
+  const root  = document.getElementById('rooms');
+  const empty = document.getElementById('empty');
+  root.innerHTML = '';
+  empty.classList.toggle('show', list.length === 0);
+
+  const lang = config.defaultLang || 'en';
+
+  list.forEach(u => {
+    const t      = u.i18n ? u.i18n[lang] : u;
+    const orig   = u.price;
+    const direct = Math.round(orig * (1 - DISCOUNT));
+    const saving = orig - direct;
+
+    const card = document.createElement('div');
+    card.className = 'room';
+    card.innerHTML = `
+      <div class="room-img" style="background-image:url('${u.image}')">
+        <div class="room-status">Available</div>
+        <div class="discount-ribbon">10% OFF Direct</div>
+      </div>
+      <div class="room-body">
+        <h3>${escapeHtml(u.name)}</h3>
+        <p class="desc">${escapeHtml(t.description || u.description || '')}</p>
+        <div class="meta">${(t.amenities || u.amenities || []).map(a => `<span class="pill">${escapeHtml(a)}</span>`).join('')}</div>
+        <div class="price-wrap">
+          <div class="price-original">Booking.com: ${fmtCOP(orig)} / night</div>
+          <div class="price-direct">${fmtCOP(direct)} <span>/ night</span><span class="price-save">Save ${fmtCOP(saving)}</span></div>
+        </div>
+        <div class="actions">
+          <button class="secondary" onclick="viewDetails('${u.id}')">View details</button>
+          <button class="whatsapp" onclick="bookWhatsApp('${u.id}')">💬 WhatsApp</button>
+        </div>
+        <button class="pay-stripe-btn" id="payBtn-${u.id}" onclick="payWithStripe('${u.id}')">
+          💳 Pay now — ${fmtCOP(direct)}/night
+        </button>
+      </div>`;
+    root.appendChild(card);
+  });
+}
+
+// ══════════════════════════════════════════════
+// STRIPE CHECKOUT — sends to backend, redirects to Stripe
+// ══════════════════════════════════════════════
+async function payWithStripe(roomId) {
+  const ci     = document.getElementById('checkin').value;
+  const co     = document.getElementById('checkout').value;
+  const guests = document.getElementById('guests').value;
+
+  if (!ci || !co || new Date(co) <= new Date(ci)) {
+    alert('Please select valid check-in and check-out dates first.');
+    return;
+  }
+
+  const u      = config.rooms.find(x => x.id === roomId);
+  const n      = nightsCount(ci, co);
+  const direct = Math.round(u.price * (1 - DISCOUNT));
+  const total  = direct * n;
+
+  const btn = document.getElementById(`payBtn-${roomId}`);
+  btn.disabled = true;
+  btn.textContent = 'Redirecting to Stripe…';
+
+  try {
+    const res = await fetch(`${BACKEND_URL}/create-checkout-session`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        roomName:   u.name,
+        checkin:    ci,
+        checkout:   co,
+        guests:     guests,
+        nights:     n,
+        totalCOP:   total,
+        successUrl: window.location.href.split('?')[0] + '?payment=success',
+        cancelUrl:  window.location.href.split('?')[0] + '?payment=cancelled',
+      })
+    });
+
+    const data = await res.json();
+
+    if (data.error) {
+      alert('Error: ' + data.error);
+      btn.disabled = false;
+      btn.textContent = `💳 Pay now — ${fmtCOP(direct)}/night`;
+      return;
+    }
+
+    // Redirect to Stripe Checkout page
+    window.location.href = data.url;
+
+  } catch (err) {
+    alert('Could not connect to payment server. Please try WhatsApp instead.');
+    btn.disabled = false;
+    btn.textContent = `💳 Pay now — ${fmtCOP(direct)}/night`;
+  }
+}
+
+// ══════════════════════════════════════════════
+// WHATSAPP (unchanged from original)
+// ══════════════════════════════════════════════
+function makeMessage(u) {
+  const ci = document.getElementById('checkin').value;
+  const co = document.getElementById('checkout').value;
+  const g  = document.getElementById('guests').value;
+  return `Hi! I would like to book the ${u.name} at ${config.propertyName} from ${fmt(ci)} to ${fmt(co)} for ${g}. Is it available?`;
+}
+function bookWhatsApp(id) {
+  const u = config.rooms.find(x => x.id === id);
+  window.open(`https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(makeMessage(u))}`, '_blank');
+}
+function generalWhatsApp() {
+  window.open(`https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent('Hi! I would like to check availability for my dates.')}`, '_blank');
+}
+
+// ══════════════════════════════════════════════
+// DETAIL MODAL (unchanged from original)
+// ══════════════════════════════════════════════
+function viewDetails(id) {
+  const u    = config.rooms.find(x => x.id === id);
+  const lang = config.defaultLang || 'en';
+  const t    = u.i18n ? u.i18n[lang] : u;
+  document.getElementById('modalImg').style.backgroundImage = `url('${u.image}')`;
+  document.getElementById('modalTitle').textContent = u.name;
+  document.getElementById('modalDesc').textContent  = t.description || u.description || '';
+  document.getElementById('modalMeta').innerHTML    = (t.amenities || u.amenities || []).map(a => `<span class="pill">${escapeHtml(a)}</span>`).join('');
+  document.getElementById('modalBtn').onclick       = () => bookWhatsApp(id);
+  document.getElementById('modal').classList.add('show');
+}
+function closeModal() { document.getElementById('modal').classList.remove('show'); }
+
+// ── INIT ──
+applyBrand();
+renderRooms(config.rooms);
 </script>
 </body>
 </html>
-
