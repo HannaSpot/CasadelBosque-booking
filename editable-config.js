@@ -70,6 +70,11 @@ const hotelConfig = {
       storyP2: "Here, mornings begin with birdsong, mountain mist and open jungle views. Architecture blends into the landscape, encouraging guests to reconnect with silence, nature and a more intentional rhythm of travel.",
       storyP3: "Inspired by regenerative hospitality and the Sierra Nevada environment, Casa del Bosque invites travelers to experience the jungle with presence, simplicity and care.",
       storyCtaBtn: "Reserve your retreat →",
+      storyInvestment: "Investment opportunity at Casa del Bosque Tayrona",
+      instagramLabel: "INSTAGRAM",
+      instagramTitle: "Life at Casa del Bosque",
+      instagramText: "Jungle mornings, cabin views and everyday life near Tayrona.",
+      instagramCta: "Follow @casadelbosquetayrona",
 
       btnClose: "Close",
       footer: "Powered by Selvatica Direct Booking Suite",
@@ -155,6 +160,11 @@ const hotelConfig = {
       storyP2: "Aquí, las mañanas comienzan con cantos de aves, niebla de montaña y vistas abiertas a la selva. La arquitectura se funde con el paisaje, invitando a los huéspedes a reconectarse con el silencio, la naturaleza y un ritmo de viaje más intencional.",
       storyP3: "Inspirada en la hospitalidad regenerativa y el entorno de la Sierra Nevada, Casa del Bosque invita a los viajeros a vivir la selva con presencia, simplicidad y cuidado.",
       storyCtaBtn: "Reserva tu retiro →",
+      storyInvestment: "Oportunidad de inversión en Casa del Bosque Tayrona",
+      instagramLabel: "INSTAGRAM",
+      instagramTitle: "La vida en Casa del Bosque",
+      instagramText: "Mañanas en la selva, vistas desde las cabañas y la vida cotidiana cerca de Tayrona.",
+      instagramCta: "Seguir @casadelbosquetayrona",
 
       btnClose: "Cerrar",
       footer: "Powered by Selvatica Direct Booking Suite",
