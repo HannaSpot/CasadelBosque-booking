@@ -31,6 +31,7 @@ const hotelConfig = {
       waFloatBtn: "Book via WhatsApp",
 
       statusAvailable: "Available",
+      photoComingSoon: "Photo coming soon",
       pricePerNight: "/ night",
       btnViewDetails: "View details",
       btnBookWA: "Book via WhatsApp",
@@ -142,6 +143,7 @@ const hotelConfig = {
       waFloatBtn: "Reservar por WhatsApp",
 
       statusAvailable: "Disponible",
+      photoComingSoon: "Foto próximamente",
       pricePerNight: "/ noche",
       btnViewDetails: "Ver detalles",
       btnBookWA: "Reservar por WhatsApp",
@@ -302,7 +304,7 @@ const hotelConfig = {
       price: 150000,
       monthlyPrice: 2400000,
       capacity: 2,
-      image: ["./images/room.webp"],
+      image: [],
       blockedDates: [],
       i18n: {
         en: {
