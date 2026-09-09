@@ -9,8 +9,8 @@ const hotelConfig = {
     en: {
       badge: "Eco-Lodge · Sierra Nevada",
       heroTitle: "Stay Above the Sierra Nevada",
-      heroSubtitle: "Three private jungle suites. Birdsong at dawn. The Caribbean on the horizon. This is what slow luxury feels like.",
-      heroScarcity: "Only 3 suites available",
+      heroSubtitle: "Four intimate jungle stays for a few nights, a few weeks or a full month. Birdsong at dawn, Wi-Fi, shared kitchen access and the Caribbean on the horizon.",
+      heroScarcity: "Only 4 accommodations available",
       heroCta: "Book Your Jungle Escape",
       heroCtaSecondary: "Check Availability",
 
@@ -21,10 +21,10 @@ const hotelConfig = {
       btnCheckAvailability: "Check availability",
       formNote: "Availability is based on blocked dates configured in editable-config.js.",
 
-      availableStaysTitle: "Available stays",
+      availableStaysTitle: "Short stays near Tayrona",
       selectDatesText: "Select dates to see available units.",
       availableForText: "Available for {ci} to {co} · {n} nights",
-      cabinTagline: "Each cabin was designed to reconnect you with nature, silence and slow living.",
+      cabinTagline: "Choose from three private cabins and one room in the main house for short, weekly or monthly stays.",
       emptyTitle: "No availability for those dates",
       emptyText: "Try different dates or contact us directly on WhatsApp.",
       btnContactWA: "Contact via WhatsApp",
@@ -34,6 +34,27 @@ const hotelConfig = {
       pricePerNight: "/ night",
       btnViewDetails: "View details",
       btnBookWA: "Book via WhatsApp",
+
+      colivingLabel: "SHORT, WEEKLY & MONTHLY STAYS",
+      colivingTitle: "Jungle coliving near Tayrona",
+      colivingIntro: "Stay for a few nights, a few weeks or a full month in a small nature-based coliving with only four accommodations. Designed for slow travelers, creatives and remote workers who value privacy, quiet and time outdoors.",
+      shortStayTitle: "Short stay",
+      shortStayDuration: "1–6 nights",
+      shortStayText: "Nightly rate with breakfast included.",
+      mediumStayTitle: "Weekly stay",
+      mediumStayDuration: "7–29 nights",
+      mediumStayText: "Shared kitchen and refrigerator access. Breakfast available at an additional cost.",
+      longStayTitle: "Monthly stay",
+      longStayDuration: "30 nights or more",
+      longStayText: "Special monthly rate with Wi-Fi, utilities and weekly linen change included.",
+      monthlyRatesTitle: "Monthly rates",
+      monthlyFrom: "from 30 nights",
+      monthlyFlores: "Las Flores · COP $2,400,000",
+      monthlyGuasimo: "El Guásimo · COP $3,200,000",
+      monthlyHobo: "El Hobo · COP $3,400,000",
+      monthlyCampano: "El Campano · COP $3,400,000",
+      colivingIncludes: "Included: Wi-Fi, utilities, shared equipped kitchen, refrigerator and weekly linen change. Breakfast from night 7 and personal laundry are available at an additional cost.",
+      colivingCta: "Ask about a long stay",
 
       experienceLabel: "THE EXPERIENCE",
       experienceTitle: "Slow mornings above the jungle canopy",
@@ -50,7 +71,7 @@ const hotelConfig = {
       directTitle: "Why book directly with Casa del Bosque",
       directIntro: "Enjoy a more personal and flexible experience while supporting regenerative hospitality directly.",
       trust1: "✓ Best rate guaranteed",
-      trust2: "✓ Only 3 suites",
+      trust2: "✓ Only 4 accommodations",
       trust3: "✓ Direct WhatsApp concierge",
       trust4: "✓ Sunrise above the jungle",
       direct1Title: "Better Rates",
@@ -99,8 +120,8 @@ const hotelConfig = {
     es: {
       badge: "Eco-Lodge · Sierra Nevada",
       heroTitle: "Despierta sobre la Sierra Nevada",
-      heroSubtitle: "Tres suites privadas en la selva. Cantos de aves al alba. El Caribe en el horizonte. Así se siente el lujo lento.",
-      heroScarcity: "Solo 3 suites disponibles",
+      heroSubtitle: "Cuatro alojamientos íntimos en la selva para quedarte unas noches, varias semanas o un mes completo. Cantos de aves al amanecer, wifi, cocina compartida y el Caribe en el horizonte.",
+      heroScarcity: "Solo 4 alojamientos disponibles",
       heroCta: "Reserva tu escapada a la selva",
       heroCtaSecondary: "Ver disponibilidad",
 
@@ -111,10 +132,10 @@ const hotelConfig = {
       btnCheckAvailability: "Ver disponibilidad",
       formNote: "La disponibilidad se basa en las fechas bloqueadas configuradas en editable-config.js.",
 
-      availableStaysTitle: "Cabañas disponibles",
-      selectDatesText: "Selecciona las fechas para ver las cabañas disponibles.",
+      availableStaysTitle: "Rentas de corta estancia cerca de Tayrona",
+      selectDatesText: "Selecciona las fechas para ver los alojamientos disponibles.",
       availableForText: "Disponible del {ci} al {co} · {n} noches",
-      cabinTagline: "Cada cabaña fue diseñada para reconectarte con la naturaleza, el silencio y el slow living.",
+      cabinTagline: "Elige entre tres cabañas privadas y una habitación en la casa principal para estancias cortas, semanales o mensuales.",
       emptyTitle: "No hay disponibilidad para esas fechas",
       emptyText: "Intenta con otras fechas o contáctanos directamente por WhatsApp.",
       btnContactWA: "Contactar por WhatsApp",
@@ -124,6 +145,27 @@ const hotelConfig = {
       pricePerNight: "/ noche",
       btnViewDetails: "Ver detalles",
       btnBookWA: "Reservar por WhatsApp",
+
+      colivingLabel: "ESTADÍAS CORTAS, SEMANALES Y MENSUALES",
+      colivingTitle: "Coliving en la naturaleza cerca de Tayrona",
+      colivingIntro: "Quédate unas noches, varias semanas o un mes completo en un coliving pequeño con solo cuatro alojamientos. Pensado para viajeros lentos, creativos y personas que trabajan a distancia y valoran la privacidad, el silencio y la naturaleza.",
+      shortStayTitle: "Estancia corta",
+      shortStayDuration: "1–6 noches",
+      shortStayText: "Tarifa por noche con desayuno incluido.",
+      mediumStayTitle: "Estancia semanal",
+      mediumStayDuration: "7–29 noches",
+      mediumStayText: "Acceso a cocina y nevera compartidas. Desayuno disponible con costo adicional.",
+      longStayTitle: "Estancia mensual",
+      longStayDuration: "30 noches o más",
+      longStayText: "Tarifa mensual especial con wifi, servicios y cambio semanal de sábanas incluidos.",
+      monthlyRatesTitle: "Tarifas mensuales",
+      monthlyFrom: "desde 30 noches",
+      monthlyFlores: "Las Flores · COP $2.400.000",
+      monthlyGuasimo: "El Guásimo · COP $3.200.000",
+      monthlyHobo: "El Hobo · COP $3.400.000",
+      monthlyCampano: "El Campano · COP $3.400.000",
+      colivingIncludes: "Incluye wifi, servicios, cocina equipada compartida, nevera y cambio semanal de sábanas. El desayuno desde la séptima noche y la lavandería personal tienen costo adicional.",
+      colivingCta: "Consultar una estancia larga",
 
       experienceLabel: "LA EXPERIENCIA",
       experienceTitle: "Mañanas lentas sobre el dosel de la selva",
@@ -140,7 +182,7 @@ const hotelConfig = {
       directTitle: "¿Por qué reservar directamente con Casa del Bosque?",
       directIntro: "Disfruta una experiencia más personal y flexible mientras apoya directamente la hospitalidad regenerativa.",
       trust1: "✓ Mejor tarifa garantizada",
-      trust2: "✓ Solo 3 suites",
+      trust2: "✓ Solo 4 alojamientos",
       trust3: "✓ Concierge directo por WhatsApp",
       trust4: "✓ Amanecer sobre la selva",
       direct1Title: "Mejores tarifas",
@@ -251,6 +293,29 @@ const hotelConfig = {
           tagline: "La vista más hermosa de la Sierra Nevada nevada.",
           description: "Privacidad total para dos. Cama en la selva, terraza privada, 2 hamacas y la vista más impresionante a las montañas nevadas de la Sierra Nevada con la que te despertarás en tu vida.",
           amenities: ["Cocina", "Vista al mar", "Vista Sierra Nevada", "2 huéspedes", "Desayuno incluido"]
+        }
+      }
+    },
+    {
+      id: "Las-Flores",
+      name: "Las Flores",
+      price: 150000,
+      monthlyPrice: 2400000,
+      capacity: 2,
+      image: ["./images/room.webp"],
+      blockedDates: [],
+      i18n: {
+        en: {
+          type: "Room in the main house",
+          tagline: "Close to the shared kitchen and everyday life at Casa del Bosque.",
+          description: "A comfortable room in the main house, suited to short, weekly and monthly stays with easy access to the shared equipped kitchen and refrigerator.",
+          amenities: ["Room in main house", "Shared equipped kitchen", "Refrigerator", "Wi-Fi", "2 guests", "Breakfast included up to 6 nights"]
+        },
+        es: {
+          type: "Habitación en la casa principal",
+          tagline: "Cerca de la cocina compartida y de la vida cotidiana de Casa del Bosque.",
+          description: "Una habitación cómoda en la casa principal, adecuada para estancias cortas, semanales y mensuales, con acceso cercano a la cocina equipada y la nevera compartidas.",
+          amenities: ["Habitación en casa principal", "Cocina equipada compartida", "Nevera", "Wifi", "2 huéspedes", "Desayuno incluido hasta 6 noches"]
         }
       }
     }
