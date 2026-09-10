@@ -41,20 +41,20 @@ const hotelConfig = {
       colivingIntro: "Stay for a few nights, a few weeks or a full month in a small nature-based coliving with only four accommodations. Designed for slow travelers, creatives and remote workers who value privacy, quiet and time outdoors.",
       shortStayTitle: "Short stay",
       shortStayDuration: "1–6 nights",
-      shortStayText: "Nightly rate with breakfast included.",
+      shortStayText: "Flexible nightly rate for stays of 1 to 6 nights.",
       mediumStayTitle: "Weekly stay",
       mediumStayDuration: "7–29 nights",
-      mediumStayText: "Shared kitchen and refrigerator access. Breakfast available at an additional cost.",
+      mediumStayText: "Shared kitchen and refrigerator access.",
       longStayTitle: "Monthly stay",
       longStayDuration: "30 nights or more",
       longStayText: "Special monthly rate with Wi-Fi, utilities and weekly linen change included.",
       monthlyRatesTitle: "Monthly rates",
       monthlyFrom: "from 30 nights",
-      monthlyFlores: "Las Flores · COP $2,400,000",
-      monthlyGuasimo: "El Guásimo · COP $3,200,000",
-      monthlyHobo: "El Hobo · COP $3,400,000",
-      monthlyCampano: "El Campano · COP $3,400,000",
-      colivingIncludes: "Included: Wi-Fi, utilities, shared equipped kitchen, refrigerator and weekly linen change. Breakfast from night 7 and personal laundry are available at an additional cost.",
+      monthlyFlores: "Las Flores · COP $2,200,000",
+      monthlyGuasimo: "El Guásimo · COP $2,900,000",
+      monthlyHobo: "El Hobo · COP $3,150,000",
+      monthlyCampano: "El Campano · COP $3,150,000",
+      colivingIncludes: "Included: Wi-Fi, utilities, shared equipped kitchen, refrigerator and weekly linen change. Personal laundry is available at an additional cost.",
       colivingCta: "Ask about a long stay",
 
       experienceLabel: "THE EXPERIENCE",
@@ -110,11 +110,11 @@ const hotelConfig = {
       testimonialsLabel: "GUEST REVIEWS",
       testimonialsTitle: "What guests say",
       reviewsCount: "100 reviews on Airbnb",
-      review1Text: '"La cabaña Guásimo es hermosa, en medio de la naturaleza y con una excelente vista del bosque. La cama es cómoda, el desayuno y la atención de Yuli son increíbles."',
+      review1Text: '"La cabaña Guásimo es hermosa, en medio de la naturaleza y con una excelente vista del bosque. La cama es cómoda y la atención de Yuli es increíble."',
       review1Detail: "El Guásimo · March 2026",
       review2Text: '"Un lugar muy hermoso y acogedor. La naturaleza, el silencio y las vistas son simplemente increíbles. Muy recomendado."',
       review2Detail: "El Guásimo · March 2026",
-      review3Text: '"Siamo stati benissimo. La location toglie il fiato! La stanza era pulitissima e splendida. La colazione impagabile. Speriamo di tornare presto ❤️"',
+      review3Text: '"Siamo stati benissimo. La location toglie il fiato! La stanza era pulitissima e splendida. Speriamo di tornare presto ❤️"',
       review3Detail: "El Guásimo · March 2026"
     },
 
@@ -153,20 +153,20 @@ const hotelConfig = {
       colivingIntro: "Quédate unas noches, varias semanas o un mes completo en un coliving pequeño con solo cuatro alojamientos. Pensado para viajeros lentos, creativos y personas que trabajan a distancia y valoran la privacidad, el silencio y la naturaleza.",
       shortStayTitle: "Estancia corta",
       shortStayDuration: "1–6 noches",
-      shortStayText: "Tarifa por noche con desayuno incluido.",
+      shortStayText: "Tarifa flexible para estancias de 1 a 6 noches.",
       mediumStayTitle: "Estancia semanal",
       mediumStayDuration: "7–29 noches",
-      mediumStayText: "Acceso a cocina y nevera compartidas. Desayuno disponible con costo adicional.",
+      mediumStayText: "Acceso a cocina y nevera compartidas.",
       longStayTitle: "Estancia mensual",
       longStayDuration: "30 noches o más",
       longStayText: "Tarifa mensual especial con wifi, servicios y cambio semanal de sábanas incluidos.",
       monthlyRatesTitle: "Tarifas mensuales",
       monthlyFrom: "desde 30 noches",
-      monthlyFlores: "Las Flores · COP $2.400.000",
-      monthlyGuasimo: "El Guásimo · COP $3.200.000",
-      monthlyHobo: "El Hobo · COP $3.400.000",
-      monthlyCampano: "El Campano · COP $3.400.000",
-      colivingIncludes: "Incluye wifi, servicios, cocina equipada compartida, nevera y cambio semanal de sábanas. El desayuno desde la séptima noche y la lavandería personal tienen costo adicional.",
+      monthlyFlores: "Las Flores · COP $2.200.000",
+      monthlyGuasimo: "El Guásimo · COP $2.900.000",
+      monthlyHobo: "El Hobo · COP $3.150.000",
+      monthlyCampano: "El Campano · COP $3.150.000",
+      colivingIncludes: "Incluye wifi, servicios, cocina equipada compartida, nevera y cambio semanal de sábanas. La lavandería personal tiene costo adicional.",
       colivingCta: "Consultar una estancia larga",
 
       experienceLabel: "LA EXPERIENCIA",
@@ -222,11 +222,11 @@ const hotelConfig = {
       testimonialsLabel: "RESEÑAS DE HUÉSPEDES",
       testimonialsTitle: "Lo que dicen nuestros huéspedes",
       reviewsCount: "100 reseñas en Airbnb",
-      review1Text: '"La cabaña Guásimo es hermosa, en medio de la naturaleza y con una excelente vista del bosque. La cama es cómoda, el desayuno y la atención de Yuli son increíbles."',
+      review1Text: '"La cabaña Guásimo es hermosa, en medio de la naturaleza y con una excelente vista del bosque. La cama es cómoda y la atención de Yuli es increíble."',
       review1Detail: "El Guásimo · Marzo 2026",
       review2Text: '"Un lugar muy hermoso y acogedor. La naturaleza, el silencio y las vistas son simplemente increíbles. Muy recomendado."',
       review2Detail: "El Guásimo · Marzo 2026",
-      review3Text: '"Siamo stati benissimo. La location toglie il fiato! La stanza era pulitissima e splendida. La colazione impagabile. Speriamo di tornare presto ❤️"',
+      review3Text: '"Siamo stati benissimo. La location toglie il fiato! La stanza era pulitissima e splendida. Speriamo di tornare presto ❤️"',
       review3Detail: "El Guásimo · Marzo 2026"
     }
   },
@@ -244,13 +244,13 @@ const hotelConfig = {
           type: "Cabin Suite",
           tagline: "Wake up above the rainforest canopy.",
           description: "Private jungle views, King bed, open-air bath and morning birdsong. On a lucky morning, you'll hear monkeys and Ñeques moving through the trees — or simply watch the birds greet the Sierra Nevada dawn.",
-          amenities: ["King bed", "Private bath", "Jungle view", "Sierra Nevada view", "Ocean view", "Hammocks", "2 guests", "Breakfast included"]
+          amenities: ["King bed", "Private bath", "Jungle view", "Sierra Nevada view", "Ocean view", "Hammocks", "2 guests"]
         },
         es: {
           type: "Suite Cabaña",
           tagline: "Despierta sobre el dosel de la selva tropical.",
           description: "Vista privada a la selva, cama King, baño al aire libre y cantos de aves al amanecer. En una mañana de suerte, escucharás monos y ñeques entre los árboles — o simplemente observarás las aves saludar el amanecer de la Sierra.",
-          amenities: ["Cama King", "Baño privado", "Vista a la selva", "Vista Sierra Nevada", "Vista al mar", "Hamacas", "2 huéspedes", "Desayuno incluido"]
+          amenities: ["Cama King", "Baño privado", "Vista a la selva", "Vista Sierra Nevada", "Vista al mar", "Hamacas", "2 huéspedes"]
         }
       }
     },
@@ -266,13 +266,13 @@ const hotelConfig = {
           type: "Cabin Suite",
           tagline: "Elevated above the forest, close to the ocean.",
           description: "An elevated cabin with immersive views of the forest and the ocean. Private bath, terrace, King bed and a wild but comfortable feel. Here, you feel the ocean, the animals and the deep peace of the Sierra Nevada.",
-          amenities: ["Elevated", "Private bath", "Forest view", "Ocean view", "King bed", "2 guests", "Breakfast included"]
+          amenities: ["Elevated", "Private bath", "Forest view", "Ocean view", "King bed", "2 guests"]
         },
         es: {
           type: "Suite Cabaña",
           tagline: "Elevada sobre el bosque, cerca del océano.",
           description: "Cabaña elevada con vistas inmersivas al bosque y al océano, baño privado, terraza y cama King. Un ambiente salvaje pero confortable donde sentís el océano, los animales y la paz profunda de la Sierra Nevada.",
-          amenities: ["Elevada", "Baño privado", "Vista al bosque", "Vista al mar", "Cama King", "2 huéspedes", "Desayuno incluido"]
+          amenities: ["Elevada", "Baño privado", "Vista al bosque", "Vista al mar", "Cama King", "2 huéspedes"]
         }
       }
     },
@@ -288,13 +288,13 @@ const hotelConfig = {
           type: "Cabin Suite",
           tagline: "The most beautiful view of the snow-capped Sierra.",
           description: "Complete privacy for two. Jungle bed, private terrace, 2 hammocks and the most breathtaking view of the Sierra Nevada snow mountains you will ever wake up to.",
-          amenities: ["Kitchen", "Ocean view", "Sierra Nevada view", "2 guests", "Breakfast included"]
+          amenities: ["Kitchen", "Ocean view", "Sierra Nevada view", "2 guests"]
         },
         es: {
           type: "Suite Cabaña",
           tagline: "La vista más hermosa de la Sierra Nevada nevada.",
           description: "Privacidad total para dos. Cama en la selva, terraza privada, 2 hamacas y la vista más impresionante a las montañas nevadas de la Sierra Nevada con la que te despertarás en tu vida.",
-          amenities: ["Cocina", "Vista al mar", "Vista Sierra Nevada", "2 huéspedes", "Desayuno incluido"]
+          amenities: ["Cocina", "Vista al mar", "Vista Sierra Nevada", "2 huéspedes"]
         }
       }
     },
@@ -302,7 +302,7 @@ const hotelConfig = {
       id: "Las-Flores",
       name: "Las Flores",
       price: 150000,
-      monthlyPrice: 2400000,
+      monthlyPrice: 2200000,
       capacity: 2,
       image: [],
       blockedDates: [],
@@ -311,13 +311,13 @@ const hotelConfig = {
           type: "Room in the main house",
           tagline: "Close to the shared kitchen and everyday life at Casa del Bosque.",
           description: "A comfortable room in the main house, suited to short, weekly and monthly stays with easy access to the shared equipped kitchen and refrigerator.",
-          amenities: ["Room in main house", "Shared equipped kitchen", "Refrigerator", "Wi-Fi", "2 guests", "Breakfast included up to 6 nights"]
+          amenities: ["Room in main house", "Shared equipped kitchen", "Refrigerator", "Wi-Fi", "2 guests"]
         },
         es: {
           type: "Habitación en la casa principal",
           tagline: "Cerca de la cocina compartida y de la vida cotidiana de Casa del Bosque.",
           description: "Una habitación cómoda en la casa principal, adecuada para estancias cortas, semanales y mensuales, con acceso cercano a la cocina equipada y la nevera compartidas.",
-          amenities: ["Habitación en casa principal", "Cocina equipada compartida", "Nevera", "Wifi", "2 huéspedes", "Desayuno incluido hasta 6 noches"]
+          amenities: ["Habitación en casa principal", "Cocina equipada compartida", "Nevera", "Wifi", "2 huéspedes"]
         }
       }
     }
